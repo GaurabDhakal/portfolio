@@ -1,9 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { useDynamiceTitle } from "@/hooks/useDynamicTitle";
 import { fetchNotionPosts } from "@/actions/blogActions";
 const Blog = () => {
-    const [posts, setPosts] = useState();
     useEffect(() => {
         const loadPosts = async () => {
             try {
