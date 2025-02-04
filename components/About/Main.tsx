@@ -4,12 +4,14 @@ import { Tag } from "@/components/Tag";
 import { NAME } from "@/constants/bio";
 import { TagWithIcons } from "@/components/TagWithIcons";
 import { FooterIcons } from "@/constants/FooterIcons";
-import { ABOUT } from "@/constants/bio";
+import { ABOUT, EDUCATION, TECHNICAL_SKILLS } from "@/constants/bio";
 import { motion } from "framer-motion";
+import { EducationCard } from "../EducationCard";
+import { TechnicalSkillsCard } from "../TechnicalSkillsCard";
 export const MainAbout = () => {
     return (
-        <div className="flex flex-col sm:flex-row items-center w-full space-y-3 sm:space-y-0">
-            <div className="flex flex-1 flex-col space-y-2 items-center">
+        <div className="flex flex-col sm:flex-row w-full space-y-3 sm:space-y-0">
+            <div className="flex flex-1 flex-col space-y-2  items-center justify">
                 <div className="w-[150px] h-[150px] border-1 border-white/60 rounded-full overflow-hidden">
                     <Image
                         alt="Photo"
@@ -46,7 +48,7 @@ export const MainAbout = () => {
                     <Tag tag_title="Hindi" />
                 </div>
             </div>
-            <div className="flex-2 space-y-3">
+            <div className="flex-2 space-y-4">
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -75,6 +77,84 @@ export const MainAbout = () => {
                     animate={{ opacity: 1, y: 0 }}
                 >
                     <p className="sm:max-w-150">{ABOUT}</p>
+                </motion.div>
+                {/* Studies section  */}
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="space-y-2"
+                >
+                    <div>
+                        <span className="text-[40px] font-[800]">Studies</span>
+                    </div>
+                    <div className="space-y-10 p-1">
+                        {EDUCATION.history.map(
+                            (
+                                {
+                                    gradeRange,
+                                    yearsAttended,
+                                    summary,
+                                    location,
+                                    institute,
+                                },
+                                key
+                            ) => {
+                                return (
+                                    <EducationCard
+                                        key={key}
+                                        gradeRange={gradeRange}
+                                        yearsAttended={yearsAttended}
+                                        location={location}
+                                        short_summary={summary}
+                                        institute_name={institute}
+                                    />
+                                );
+                            }
+                        )}
+                    </div>
+                    <div className="max-w-150 space-y-1 my-5">
+                        <div>
+                            <p className="text-2xl font-bold">Summary</p>
+                        </div>
+                        <div className="p-1">
+                            <p>{EDUCATION.completeSummary}</p>
+                        </div>
+                    </div>
+                </motion.div>
+                {/* Technical skills section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="space-y-2"
+                >
+                    <div>
+                        <span className="text-[40px] font-[800]">
+                            Technical Skills
+                        </span>
+                    </div>
+                    <div className="p-1">
+                        {TECHNICAL_SKILLS.map(
+                            (
+                                {
+                                    skill_name,
+                                    short_summary,
+                                    screenshots,
+                                    level,
+                                },
+                                key
+                            ) => {
+                                return (
+                                    <TechnicalSkillsCard
+                                        skill_name={skill_name}
+                                        short_summary={short_summary}
+                                        screenshots={screenshots}
+                                        level={level}
+                                        key={key}
+                                    />
+                                );
+                            }
+                        )}
+                    </div>
                 </motion.div>
             </div>
         </div>
