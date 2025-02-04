@@ -15,13 +15,13 @@ export const Card = ({ title, date, type, href }: TCard) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ x: 10 }}
-            className="flex select-none flex-col space-y-1 cursor-pointer"
+            className="flex select-none  flex-col space-y-1 cursor-pointer"
             onClick={() => {
                 router.push(href);
             }}
         >
-            <div className="text-xl font-bold max-w-60 max-h-20 overflow-hidden">
-                <p className="overflow-ellipsis">{title}</p>
+            <div className="text-xl font-bold max-w-60 max-h-20 line-clamp-2">
+                <p>{title}</p>
             </div>
             <div>
                 <p className="text-sm text-white/60">{date}</p>

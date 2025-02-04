@@ -52,6 +52,7 @@ export const MainAbout = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
                     className="flex flex-col items-center sm:items-start"
                 >
                     <p className="text-3xl sm:text-6xl font-[900]">{NAME}</p>
@@ -62,6 +63,7 @@ export const MainAbout = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
                     className="flex space-x-2 space-y-2 sm:space-y-0 items-center flex-wrap"
                 >
                     {FooterIcons.map(({ svg, link, name }, index) => (
@@ -75,6 +77,7 @@ export const MainAbout = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
                 >
                     <p className="sm:max-w-150">{ABOUT}</p>
                 </motion.div>
@@ -82,6 +85,7 @@ export const MainAbout = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
                     className="space-y-2"
                 >
                     <div>
@@ -125,6 +129,7 @@ export const MainAbout = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
                     className="space-y-2"
                 >
                     <div>

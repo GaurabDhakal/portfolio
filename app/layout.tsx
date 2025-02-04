@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { Providers } from "./providers";
+
 const interSans = Inter({
     variable: "--font-inter-sans",
     subsets: ["latin"],
@@ -20,7 +22,7 @@ export default function RootLayout({
                 <div className="fixed bottom-0 w-full  lg:sticky lg:top-0">
                     <Navbar></Navbar>
                 </div>
-                <main className="p-4 lg:p-0">{children}</main>
+                <main className="p-4 lg:p-0"> <Providers>{children}</Providers></main>
                 <footer>
                     <Footer />
                 </footer>
