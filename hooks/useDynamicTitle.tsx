@@ -19,7 +19,7 @@ const getTitle = <T extends Record<string, string>>(
 
     return dynamicMatch?.[1] || defaultTitle;
 };
-export const useDynamiceTitle = () => {
+export const useDynamicTitle = () => {
     const path = usePathname();
     const title = getTitle(path, titles, `Page Not Found`);
     useEffect(() => {

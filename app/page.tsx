@@ -1,6 +1,6 @@
 "use client";
 import { Intro } from "@/components/Intro";
-import { useDynamiceTitle } from "@/hooks/useDynamicTitle";
+import { useDynamicTitle } from "@/hooks/useDynamicTitle";
 import { Card } from "@/components/Card";
 import { motion } from "framer-motion";
 import { fetchNotionPosts } from "@/actions/blogActions";
@@ -13,7 +13,7 @@ export default function Home() {
         queryFn: () => fetchNotionPosts(2),
         staleTime: 5 * 60 * 1000, // 5 minutes cache
     });
-    useDynamiceTitle();
+    useDynamicTitle();
     return (
         <div className="text-white flex flex-col items-center justify-center space-y-2 sm:space-y-15 lg:my-12 ">
             <div className="p-5">

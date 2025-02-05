@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { useDynamiceTitle } from "@/hooks/useDynamicTitle";
+import { useDynamicTitle } from "@/hooks/useDynamicTitle";
 const Work = () => {
-    useDynamiceTitle();
+    useDynamicTitle();
     return <div className="text-white">Work</div>;
 };
 

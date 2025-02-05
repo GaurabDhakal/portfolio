@@ -1,6 +1,6 @@
 "use client";
 import React, {  useEffect } from "react";
-import { useDynamiceTitle } from "@/hooks/useDynamicTitle";
+import { useDynamicTitle } from "@/hooks/useDynamicTitle";
 import { fetchNotionPosts } from "@/actions/blogActions";
 const Blog = () => {
     useEffect(() => {
@@ -15,7 +15,7 @@ const Blog = () => {
         };
         loadPosts();
     }, []);
-    useDynamiceTitle();
+    useDynamicTitle();
     return (
         <>
             <div className="text-white">Blog</div>
