@@ -45,7 +45,7 @@ export const EDUCATION = {
             institute: "Reliance International Academy",
             yearsAttended: "2022 – 2024",
             summary: "A period of refinement, exploration, and self-discovery.",
-            location: "Mahankal, Kathmandu"
+            location: "Saraswatinagar, Kathmandu"
         }
     ],
     completeSummary: "Throughout my educational journey, I have experienced significant transitions, overcoming challenges such as adapting to new schools, skipping grades, and moving between different locations. These experiences have shaped my resilience, perseverance, and determination to continue learning. Although there have been difficult times, each stage has contributed to my growth, both academically and personally. I am now in a phase of refining my skills, with a focus on future aspirations in web development and data science."
