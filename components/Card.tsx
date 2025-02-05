@@ -16,7 +16,7 @@ export const Card = ({ title, date, type, href, location }: TCard) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ x: 10 }}
-            className="flex select-none  flex-col space-y-1 cursor-pointer"
+            className="flex select-none flex-col space-y-1 cursor-pointer"
             onClick={() => {
                 router.push(href);
             }}

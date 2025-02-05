@@ -21,7 +21,7 @@ const Blog = () => {
                         Writing About Web Development & AI...
                     </p>
                 </div>
-                <div className="p-3 space-y-5">
+                <div className="p-3 select-none space-y-5">
                     {isLoading && <Spinner></Spinner>}
                     {Array.isArray(allPosts) &&
                         allPosts.map((post, key) => {
