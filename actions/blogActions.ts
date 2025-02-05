@@ -2,32 +2,39 @@
 import { TBlog } from "@/types"
 import { Client } from "@notionhq/client"
 import { NotionToMarkdown } from "notion-to-md"
-export interface BlogPost {
-    id: string
-    title: string
-    slug: string
-    content: string
-    lastEdited: string
-    tags?: string[]
-}
+import { GetPageResponse, PartialDatabaseObjectResponse, PageObjectResponse, DatabaseObjectResponse } from "@notionhq/client/build/src/api-endpoints"
 
 const notion = new Client({
     auth: process.env?.NOTION_API_KEY
 })
+
+type ExtendedProperties = {
+    Name: {
+        title: Array<{
+            plain_text: string;
+        }>
+    },
+    Tags?: {
+        multi_select: Array<{
+            name: string;
+        }>
+    }
+}
 const n2m = new NotionToMarkdown({ notionClient: notion })
-async function postFormatter(metaData): Promise<TBlog | { error: string }> {
+async function postFormatter(metaData: GetPageResponse | PageObjectResponse | DatabaseObjectResponse | PartialDatabaseObjectResponse): Promise<TBlog | { error: string }> {
     try {
         const mdBlocks = await n2m.pageToMarkdown(metaData?.id);
+
         const mdString = n2m.toMarkdownString(mdBlocks);
         return {
             id: metaData?.id,
-            title: metaData?.properties.Name.title[0].plain_text,
+            title: ((metaData as PageObjectResponse).properties.Name as ExtendedProperties['Name']).title[0]?.plain_text || '',
             content: mdString,
-            createdOn: metaData?.created_time,
-            lastEdited: metaData?.last_edited_time,
-            tags: metaData.properties.Tags?.multi_select?.map((tag: any) => {
+            createdOn: (metaData as PageObjectResponse)?.created_time,
+            lastEdited: (metaData as PageObjectResponse)?.last_edited_time,
+            tags: ((metaData as PageObjectResponse).properties.Tags as ExtendedProperties['Tags'])?.multi_select?.map((tag: { name: string }) => {
                 return tag.name
-            }) || []
+            }) ?? []
         }
 
     } catch {
@@ -39,7 +46,7 @@ async function postFormatter(metaData): Promise<TBlog | { error: string }> {
 }
 
 
-export async function fetchNotionPosts(limit?: number): Promise<TBlog[] | { error: string }> {
+export async function fetchNotionPosts(limit?: number) {
     const databaseId = process.env.NOTION_DATABASE_ID;
     if (!databaseId) {
         return {
@@ -57,7 +64,8 @@ export async function fetchNotionPosts(limit?: number): Promise<TBlog[] | { erro
             ],
             page_size: limit
         });
-        const posts: TBlog = await Promise.all(
+
+        const posts = await Promise.all(
             response.results.map(async (page) => {
                 const finalOutput = await postFormatter(page)
                 return finalOutput

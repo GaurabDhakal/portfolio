@@ -4,7 +4,7 @@ export type TBlog = {
     id: string,
     title: string,
     content: MdStringObject,
-    createdOn: Date,
-    lastEdited: Date,
+    createdOn: string,
+    lastEdited: string,
     tags?: string[],
 }

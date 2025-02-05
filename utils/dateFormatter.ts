@@ -1,4 +1,4 @@
-export function ISO_To_Normal(isoDate: Date): string {
+export function ISO_To_Normal(isoDate: string): string {
     const date = new Date(isoDate);
 
     const formattedDate = date.toLocaleDateString('en-US', {

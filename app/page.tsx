@@ -32,23 +32,45 @@ export default function Home() {
                                     Latest Blog Post
                                 </p>
                             </motion.div>
-                            {recentPosts.map(
-                                ({ title, createdOn, tags, id }, key) => {
-                                    console.log(tags);
-                                    return (
-                                        <Card
-                                            key={key}
-                                            title={title}
-                                            date={ISO_To_Normal(createdOn)}
-                                            type={
-                                                tags?.[0]
-                                                    ? tags?.[0]
-                                                    : "No tags"
-                                            }
-                                            href={"/blog/" + id}
-                                        />
-                                    );
-                                }
+                            {Array.isArray(recentPosts) ? (
+                                recentPosts.map((post, key) => {
+                                    if (
+                                        "title" in post &&
+                                        "createdOn" in post &&
+                                        "tags" in post &&
+                                        "id" in post
+                                    ) {
+                                        const { title, createdOn, tags, id } =
+                                            post;
+                                        console.log(tags);
+                                        return (
+                                            <Card
+                                                key={key}
+                                                title={title}
+                                                date={ISO_To_Normal(createdOn)}
+                                                type={
+                                                    tags?.[0]
+                                                        ? tags?.[0]
+                                                        : "No tags"
+                                                }
+                                                href={"/blog/" + id}
+                                            />
+                                        );
+                                    } else {
+                                        return (
+                                            <div
+                                                className="text-red-500"
+                                                key={key}
+                                            >
+                                                {"An error occurred"}
+                                            </div>
+                                        );
+                                    }
+                                })
+                            ) : (
+                                <div className="text-red-500">
+                                    {recentPosts?.error || "An error occurred"}
+                                </div>
                             )}
                         </>
                     ) : (
