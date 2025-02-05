@@ -5,7 +5,7 @@ import { MainAbout } from "@/components/About/Main";
 const About = () => {
     useDynamicTitle();
     return (
-        <div className="text-white flex ">
+        <div className="text-white flex sm:my-10">
             <MainAbout />
         </div>
     );

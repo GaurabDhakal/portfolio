@@ -11,8 +11,8 @@ import { TechnicalSkillsCard } from "../TechnicalSkillsCard";
 export const MainAbout = () => {
     return (
         <div className="flex flex-col sm:flex-row w-full space-y-3 sm:space-y-0">
-            <div className="flex flex-1 flex-col space-y-2  items-center justify">
-                <div className="w-[150px] h-[150px] border-1 border-white/60 rounded-full overflow-hidden">
+            <div className="flex lg:sticky lg:top-22 flex-1 flex-col space-y-2  items-center justify lg:h-fit">
+                <div className=" w-[150px] h-[150px] border-1  border-white/60 rounded-full overflow-hidden">
                     <Image
                         alt="Photo"
                         src="/photo.png"

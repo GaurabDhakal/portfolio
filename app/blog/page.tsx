@@ -14,7 +14,7 @@ const Blog = () => {
     });
     useDynamicTitle();
     return (
-        <div className="flex items-center justify-center space-y-3 sm:space-y-0">
+        <div className="flex items-center justify-center space-y-3 sm:space-y-0 sm:my-10">
             <div className="flex flex-col space-y-5">
                 <div className="text-white">
                     <p className="text-[30px] font-[800]">

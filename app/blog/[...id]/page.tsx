@@ -6,7 +6,7 @@ const SpecificBlog = () => {
     useDynamicTitle()
     const { id } = useParams();
     
-    return <div>{id}</div>;
+    return <div className="sm:my-10">{id}</div>;
 };
 
 export default SpecificBlog;
