@@ -45,7 +45,7 @@ const SpecificBlog = () => {
                     <div className=" ">
                         <div>
                             <a
-                                className=" flex select-none items-center btnSelector cursor-pointer border-1 border-transparent p-2 hover:border-cyan-100 w-fit transition-all duration-300 rounded-xl"
+                                className=" flex select-none items-center justify-between space-x-3 btnSelector cursor-pointer border-1 border-transparent p-2 hover:border-cyan-100 w-fit transition-all duration-300 rounded-xl"
                                 onClick={(e) => {
                                     e.preventDefault();
                                     handleClick("/blog");
