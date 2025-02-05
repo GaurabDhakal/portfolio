@@ -89,4 +89,5 @@ export const NavbarLinks = [
         href: "/blog",
         text: "Blog",
     },
+    
 ];

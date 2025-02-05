@@ -24,7 +24,6 @@ const n2m = new NotionToMarkdown({ notionClient: notion })
 async function postFormatter(metaData: GetPageResponse | PageObjectResponse | DatabaseObjectResponse | PartialDatabaseObjectResponse): Promise<TBlog | { error: string }> {
     try {
         const mdBlocks = await n2m.pageToMarkdown(metaData?.id);
-
         const mdString = n2m.toMarkdownString(mdBlocks);
         return {
             id: metaData?.id,
