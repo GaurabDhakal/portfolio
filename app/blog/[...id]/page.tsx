@@ -85,14 +85,14 @@ const SpecificBlog = () => {
                                 {(postData as TBlog).title}
                             </p>
                             <div>
-                                <p className="text-sm mb-2  text-white/80">
+                                <p className="text-sm text-white/80">
                                     {ISO_To_Normal(
                                         (postData as TBlog).createdOn
                                     )}
                                 </p>
                             </div>
                         </div>
-                        <div className="p-3 mb-5">
+                        <div className="px-3 mb-5">
                             <MarkdownRenderer
                                 markdown={(postData as TBlog).content["parent"]}
                             />
