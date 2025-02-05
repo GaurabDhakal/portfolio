@@ -22,6 +22,7 @@ export const NavbarLinks = [
         ),
         href: "/",
         text: "Home",
+        hasChildren:false,
     },
     {
         icon: (
@@ -44,6 +45,7 @@ export const NavbarLinks = [
         ),
         href: "/about",
         text: "About",
+        hasChildren:false,
     },
     {
         icon: (
@@ -66,6 +68,7 @@ export const NavbarLinks = [
         ),
         href: "/work",
         text: "Work",
+        hasChildren:false,
     },
     {
         icon: (
@@ -88,6 +91,7 @@ export const NavbarLinks = [
         ),
         href: "/blog",
         text: "Blog",
+        hasChildren:true,
     },
-    
+
 ];

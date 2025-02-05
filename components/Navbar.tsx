@@ -61,26 +61,30 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
                 <nav className="flex items-center font-semibold justify-center h-14 sm:h-12 bg-[#0a0d0c] border border-white/50 text-white m-5 rounded-2xl  px-10 sm:px-2">
                     <ul>
                         <li className="flex items-center space-x-10 sm:space-x-[3px]">
-                            {NavbarLinks.map(({ icon, text, href }, index) => (
-                                <motion.a
-                                    whileTap={{ scale: 0.95 }}
-                                    key={index}
-                                    href={href}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        handleClick(href);
-                                    }}
-                                    className={`${
-                                        path === href &&
-                                        "sm:bg-[#3e3e3e] sm:border-white/50 sm:text-white text-[#6dff29]"
-                                    } flex items-center justify-center space-x-3 rounded-xl border border-transparent active:text-[#6dff29]  p-0 sm:px-8 py-0 sm:py-1.5 transition-all duration-500 sm:hover:border-white/50 sm:hover:bg-[#3e3e3e]`}
-                                >
-                                    {icon}
-                                    <span className="hidden sm:inline">
-                                        {text}
-                                    </span>
-                                </motion.a>
-                            ))}
+                            {NavbarLinks.map(
+                                ({ icon, text, href, hasChildren }, index) => (
+                                    <motion.a
+                                        whileTap={{ scale: 0.95 }}
+                                        key={index}
+                                        href={href}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            handleClick(href);
+                                        }}
+                                        className={`${
+                                            (path === href ||
+                                                (path.startsWith(href) &&
+                                                    hasChildren)) &&
+                                            "sm:bg-[#3e3e3e] sm:border-white/50 sm:text-white text-[#6dff29]"
+                                        } flex items-center justify-center space-x-3 rounded-xl border border-transparent active:text-[#6dff29]  p-0 sm:px-8 py-0 sm:py-1.5 transition-all duration-500 sm:hover:border-white/50 sm:hover:bg-[#3e3e3e]`}
+                                    >
+                                        {icon}
+                                        <span className="hidden sm:inline">
+                                            {text}
+                                        </span>
+                                    </motion.a>
+                                )
+                            )}
                         </li>
                     </ul>
                 </nav>
