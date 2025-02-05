@@ -51,7 +51,7 @@ const SpecificBlog = () => {
                     >
                         <div>
                             <a
-                                className=" flex select-none items-center justify-between space-x-3 btnSelector cursor-pointer border-1 border-transparent p-2 hover:border-cyan-100 w-fit transition-all duration-300 rounded-xl"
+                                className="flex select-none items-center justify-between space-x-3 btnSelector cursor-pointer border-1 border-transparent p-2 hover:border-cyan-100 w-fit transition-all duration-300 rounded-xl"
                                 onClick={(e) => {
                                     e.preventDefault();
                                     handleClick("/blog");
@@ -80,7 +80,7 @@ const SpecificBlog = () => {
                                 </div>
                             </a>
                         </div>
-                        <div>
+                        <div className="px-2">
                             <p className="text-[40px] font-[800]">
                                 {(postData as TBlog).title}
                             </p>
@@ -92,7 +92,7 @@ const SpecificBlog = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="px-3 mb-5">
+                        <div className="px-5 mb-5">
                             <MarkdownRenderer
                                 markdown={(postData as TBlog).content["parent"]}
                             />
