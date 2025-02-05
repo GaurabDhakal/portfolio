@@ -9,6 +9,8 @@ import { TBlog } from "@/types";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { ISO_To_Normal } from "@/utils/dateFormatter";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+
 const SpecificBlog = () => {
     const { id } = useParams();
     useDynamicTitle();
@@ -38,11 +40,15 @@ const SpecificBlog = () => {
         <div className="sm:my-10">Something went wrong</div>;
     }
     return (
-        <div className="sm:my-10 flex flex-col justify-center items-center">
+        <div className="sm:my-10 flex flex-col justify-center items-center ">
             {isLoading && <Spinner />}
             <div className="max-w-100 sm:max-w-150">
                 {(postData as TBlog) && (
-                    <div className=" ">
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                    >
                         <div>
                             <a
                                 className=" flex select-none items-center justify-between space-x-3 btnSelector cursor-pointer border-1 border-transparent p-2 hover:border-cyan-100 w-fit transition-all duration-300 rounded-xl"
@@ -78,20 +84,20 @@ const SpecificBlog = () => {
                             <p className="text-[40px] font-[800]">
                                 {(postData as TBlog).title}
                             </p>
-                        </div>
-                        <div className="p-3">
                             <div>
-                                <p className="text-sm  text-white/80">
+                                <p className="text-sm mb-2  text-white/80">
                                     {ISO_To_Normal(
                                         (postData as TBlog).createdOn
                                     )}
                                 </p>
                             </div>
+                        </div>
+                        <div className="p-3 mb-5">
                             <MarkdownRenderer
                                 markdown={(postData as TBlog).content["parent"]}
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 )}
             </div>
         </div>
