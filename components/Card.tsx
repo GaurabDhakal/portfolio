@@ -4,10 +4,11 @@ type TCard = {
     date: string;
     type: string;
     href: string;
+    location:"blog"|"home"
 };
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-export const Card = ({ title, date, type, href }: TCard) => {
+export const Card = ({ title, date, type, href, location }: TCard) => {
     const router = useRouter();
 
     return (
@@ -20,7 +21,7 @@ export const Card = ({ title, date, type, href }: TCard) => {
                 router.push(href);
             }}
         >
-            <div className="text-xl font-bold max-w-60 max-h-20 line-clamp-2">
+            <div className={`text-xl font-bold max-h-20 ${location=="home"?"line-clamp-2 max-w-60":"" }`}>
                 <p>{title}</p>
             </div>
             <div>

@@ -9,7 +9,7 @@ import { ISO_To_Normal } from "@/utils/dateFormatter";
 import { useQuery } from "@tanstack/react-query";
 export default function Home() {
     const { data: recentPosts, isLoading } = useQuery({
-        queryKey: ["recent-posts"],
+        queryKey: ["all-posts"],
         queryFn: () => fetchNotionPosts(2),
         staleTime: 5 * 60 * 1000, // 5 minutes cache
     });
@@ -54,6 +54,7 @@ export default function Home() {
                                                         : "No tags"
                                                 }
                                                 href={"/blog/" + id}
+                                                location="home"
                                             />
                                         );
                                     } else {
