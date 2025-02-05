@@ -4,7 +4,7 @@ import { useDynamiceTitle } from "@/hooks/useDynamicTitle";
 import { Card } from "@/components/Card";
 import { motion } from "framer-motion";
 import { fetchNotionPosts } from "@/actions/blogActions";
-import LoadingBar from "@/components/LoadingBar";
+import LoadingBar from "@/components/LoadingSpinner";
 import { ISO_To_Normal } from "@/utils/dateFormatter";
 import { useQuery } from "@tanstack/react-query";
 export default function Home() {

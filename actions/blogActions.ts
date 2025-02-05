@@ -78,7 +78,6 @@ export async function fetchNotionPosts(limit?: number) {
             error: error as string
         }
     }
-    // console.log(posts)
 }
 export async function fetchNotionPostById(id: string) {
     const databaseId = process.env.NOTION_DATABASE_ID;
