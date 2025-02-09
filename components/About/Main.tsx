@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { Tag } from "@/components/Tag";
-import { NAME } from "@/constants/bio";
 import { TagWithIcons } from "@/components/TagWithIcons";
 import { FooterIcons } from "@/constants/FooterIcons";
-import { ABOUT, EDUCATION, TECHNICAL_SKILLS } from "@/constants/bio";
+import { ABOUT, EDUCATION, TECHNICAL_SKILLS, NAME } from "@/constants/bio";
 import { motion } from "framer-motion";
 import { EducationCard } from "../EducationCard";
 import { TechnicalSkillsCard } from "../TechnicalSkillsCard";

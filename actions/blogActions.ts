@@ -44,7 +44,6 @@ async function postFormatter(metaData: GetPageResponse | PageObjectResponse | Da
 
 }
 
-
 export async function fetchNotionPosts(limit?: number) {
     const databaseId = process.env.NOTION_DATABASE_ID;
     if (!databaseId) {

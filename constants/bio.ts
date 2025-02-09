@@ -55,6 +55,6 @@ export const TECHNICAL_SKILLS = [
         skill_name: "Next.js",
         level: "Intermediate",
         short_summary: "I deeply admire Next.js and am continuously working on enhancing my skills in it.",
-        screenshots : []
+        screenshots: []
     },
 ]
