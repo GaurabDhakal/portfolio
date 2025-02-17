@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaExternalLinkSquareAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 export const ProjectCard = ({
     imageUrl,
@@ -31,18 +31,18 @@ export const ProjectCard = ({
         <motion.div
             initial={{
                 opacity: 0,
-                x: 20 * animationDirection,
-                rotateY: 10, // Adding rotation on the Y-axis
+                x: 100 * animationDirection,
+                rotateY: 30, // Adding rotation on the Y-axis
                 scale: 0.9, // Starting from a smaller scale for a zoom-in effect
             }}
             animate={{
                 opacity: 1,
                 x: 0,
-                rotateY: 0, 
-                scale: 1, 
+                rotateY: 0,
+                scale: 1,
             }}
             transition={{
-                duration: 0.8,
+                duration: 0.2,
                 ease: "easeInOut", // Smooth ease-in-out timing function
             }}
             whileHover={{
@@ -65,10 +65,14 @@ export const ProjectCard = ({
                 <div className="text-2xl font-bold">{title}</div>
                 <div className="p-1">{description}</div>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center gap-4 ">
                 <FaGithub
                     className="h-5 w-5 cursor-pointer"
                     onClick={handleGithubClick}
+                />
+                <FaExternalLinkSquareAlt
+                    onClick={handleDemoClick}
+                    className="h-5 cursor-pointer w-5"
                 />
             </div>
         </motion.div>
