@@ -21,18 +21,15 @@ export const TechnicalSkillsCard = ({
                 <div className="max-w-150 ">
                     <span className="text-white/80">{short_summary}</span>
                 </div>
-                {screenshots &&
-                    screenshots.map((src, key) => {
-                        return (
-                            <Image
-                                key={key}
-                                src={src}
-                                height={100}
-                                alt="Image"
-                                width={100}
-                            />
-                        );
-                    })}
+                {screenshots?.map((src) => (
+                    <Image
+                        key={src}
+                        src={src}
+                        height={100}
+                        alt="Image"
+                        width={100}
+                    />
+                ))}
             </div>
         </div>
     );

@@ -6,23 +6,24 @@ import {
     BASIC_EXPANDED_INTRO_TEXT,
 } from "@/constants/bio";
 import { ButtonWrapper } from "./ButtonWrapper";
+
+const fadeInUpAnimation = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5 }
+};
+
 const Intro = () => {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className=" space-y-4"
+            {...fadeInUpAnimation}
+            className="space-y-4"
         >
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-5 "
+                {...fadeInUpAnimation}
+                className="space-y-5"
             >
-                <div
-                    className={` md:text-5xl text-2xl !font-bold lg:max-w-200 `}
-                >
+                <div className="md:text-5xl text-2xl !font-bold lg:max-w-200">
                     <p>{BASIC_SHORT_INTRO_TEXT}</p>
                 </div>
                 <motion.div
@@ -30,10 +31,8 @@ const Intro = () => {
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 0.7 }}
                     className="border-t-2 border-gray-500 rounded-lg my-4 max-w-180"
-                ></motion.div>
-                <div
-                    className={`max-w-210 text-xl  text-neutral-300/75 font-[500]`}
-                >
+                />
+                <div className="max-w-210 text-xl text-neutral-300/75 font-[500]">
                     <p>{BASIC_EXPANDED_INTRO_TEXT}</p>
                 </div>
             </motion.div>
