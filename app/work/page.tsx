@@ -21,18 +21,25 @@ const Work = () => {
                     </p>
                 </div>
             </div>
-            <div className="flex gap-4 flex-wrap items-center justify-center">
+            <div className="flex gap-6 flex-wrap items-center justify-center">
                 {projects.map(
-                    ({
-                        demo_link,
-                        github_link,
-                        title,
-                        description,
-                        imageUrl,
-                        id,
-                    }) => {
+                    (
+                        {
+                            demo_link,
+                            github_link,
+                            title,
+                            description,
+                            imageUrl,
+                            id,
+                        },
+                        index
+                    ) => {
+                        const axisDirection = index % 2 === 0 ? -1 : 1;
                         return (
                             <ProjectCard
+                                animationOptions={{
+                                    axis_direction: axisDirection,
+                                }}
                                 key={id}
                                 demo_link={demo_link}
                                 github_link={github_link}

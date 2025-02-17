@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "./providers";
 import { Footer } from "@/components/Footer";
-
+import { Suspense } from "react";
 const interSans = Inter({
     variable: "--font-inter-sans",
     subsets: ["latin"],
@@ -24,7 +24,15 @@ export default function RootLayout({
                     <Navbar />
                 </div>
                 <main className="flex-grow p-4 lg:p-0 mb-16 lg:mb-0 lg:mt-16">
-                    <Providers>{children}</Providers>
+                    <Suspense
+                        fallback={
+                            <span className="text-red-800 flex items-center justify-center">
+                                Loading......
+                            </span>
+                        }
+                    >
+                        <Providers>{children}</Providers>
+                    </Suspense>
                 </main>
                 <Footer />
             </body>
