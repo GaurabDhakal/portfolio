@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Portfolio Website
 
-## Getting Started
+Welcome to my personal portfolio website! This website showcases my skills, projects, and achievements as a software engineer. It is designed to give you an overview of who I am, what I do, and the technologies I work with.
 
-First, run the development server:
+## Table of Contents
+- [My Portfolio Website](#my-portfolio-website)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Technologies Used](#technologies-used)
+  - [Features](#features)
+  - [Installation](#installation)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This portfolio website is a personal project built to highlight my journey as a software engineer. It features a clean and responsive design, showcasing my best projects, skills, and contact information. The website is built with modern web technologies to ensure a fast, responsive, and seamless user experience.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The following technologies were used to build this portfolio website:
+- **Frontend**: 
+  - Next.js (for interactive UI components)
+  - Tailwind CSS (for modern, responsive design)
+- **Deployment**: 
+  - Deployed on [Netlify](https://www.gaurabdhakl.com.np/) 
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Home Page**: Displays a brief introduction about me and my background.
+- **About Me**: A detailed section outlining my professional journey, skills, and interests.
+- **Projects**: A showcase of my personal and professional projects with descriptions and links to the source code.
+- **Responsive Design**: The site is fully responsive, adapting to various screen sizes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To run this portfolio website locally, follow these steps:
 
-## Deploy on Vercel
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/gaurabdhakl/portfolio.git
+2. Navigate to the project folder:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    ```bash
+    cd portfolio
+3. Install the dependencies
+     ```bash
+     npm install 
+4. Make changes in the constant folder
