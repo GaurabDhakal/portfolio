@@ -26,7 +26,7 @@ export const projects = [
         description: "A simple to-do list app that allows users to add, edit, and delete tasks.",
         github_link: github_link,
         tech_stack: ["HTML", "CSS", "JavaScript"],
-        demo_link: "https://gaurabdhakal.github.io/Projects/weather.html"
+        demo_link: "https://gaurabdhakal.github.io/Projects/TODOLIST/index.html"
     },
     {
         id: 3,
@@ -35,6 +35,6 @@ export const projects = [
         description: "A weather app that displays the current weather conditions for a given location.",
         github_link: github_link,
         tech_stack: ["HTML", "CSS", "JavaScript"],
-        demo_link: "https://gaurabdhakal.github.io/Projects/TODOLIST/index.html"
+        demo_link: "https://gaurabdhakal.github.io/Projects/weather.html"
     }
 ]
