@@ -49,7 +49,7 @@ export const ProjectCard = ({
                 scale: 1.05, // Slight zoom-in effect on hover
                 transition: { duration: 0.2 },
             }}
-            className="max-w-30 flex flex-col items-center rounded-2xl min-w-80 p-3 h-100 transition-all duration-300 ease-in-out bg-[#18181a] justify-between"
+            className="max-w-30 flex flex-col items-center rounded-2xl min-w-80 p-3 h-100 transition-all duration-300 ease-in-out bg-[#18181a] hover:bg-[#373F51]  "
         >
             <div>
                 <Image
@@ -58,22 +58,24 @@ export const ProjectCard = ({
                     width={400}
                     onClick={handleDemoClick}
                     height={400}
-                    className="h-50 cursor-pointer rounded-md"
+                    className="h-50 object-cover cursor-pointer rounded-md"
                 ></Image>
             </div>
-            <div className="flex w-full flex-col">
-                <div className="text-2xl font-bold">{title}</div>
-                <div className="p-1">{description}</div>
-            </div>
-            <div className="flex items-center gap-4 ">
-                <FaGithub
-                    className="h-5 w-5 cursor-pointer"
-                    onClick={handleGithubClick}
-                />
-                <FaExternalLinkSquareAlt
-                    onClick={handleDemoClick}
-                    className="h-5 cursor-pointer w-5"
-                />
+            <div className="flex flex-col items-center justify-between p-2 h-full">
+                <div className="flex w-full flex-col cursor-default">
+                    <div className="text-2xl font-bold">{title}</div>
+                    <div className="p-1">{description}</div>
+                </div>
+                <div className="flex items-center gap-4 ">
+                    <FaGithub
+                        className="h-5 w-5 cursor-pointer"
+                        onClick={handleGithubClick}
+                    />
+                    <FaExternalLinkSquareAlt
+                        onClick={handleDemoClick}
+                        className="h-5 cursor-pointer w-5"
+                    />
+                </div>
             </div>
         </motion.div>
     );
