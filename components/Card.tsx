@@ -2,13 +2,14 @@
 type TCard = {
     title: string;
     date: string;
-    type: string;
+    types: string[];
     href: string;
-    location:"blog"|"home"
+    location: "blog" | "home";
 };
+import { Tag } from "./Tag";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-export const Card = ({ title, date, type, href, location }: TCard) => {
+export const Card = ({ title, date, types, href, location }: TCard) => {
     const router = useRouter();
 
     return (
@@ -16,21 +17,27 @@ export const Card = ({ title, date, type, href, location }: TCard) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ x: 10 }}
-            className="flex select-none flex-col space-y-1 cursor-pointer"
+            className="flex select-none flex-col cursor-pointer justify-between h-full"
             onClick={() => {
                 router.push(href);
             }}
         >
-            <div className={`text-xl font-bold max-h-20 ${location=="home"?"line-clamp-2 max-w-60":"" }`}>
+            <div
+                className={`text-xl font-bold max-h-20 ${location == "home" ? "line-clamp-2 max-w-60" : ""}`}
+            >
                 <p>{title}</p>
             </div>
-            <div>
-                <p className="text-sm text-white/60">{date}</p>
-            </div>
-            <div className="text-sm font-semibold flex">
-                <p className="border-1 border-white/60 bg-black text-white/80 rounded-3xl px-2 py-1">
-                    {type}
-                </p>
+            <div className="space-y-1">
+                <div>
+                    <p className="text-sm text-white/60">{date}</p>
+                </div>
+                <div className="flex">
+                    {types.map((type, id) => (
+                        <div key={id + 22}>
+                            <Tag tag_title={type} />
+                        </div>
+                    ))}
+                </div>
             </div>
         </motion.div>
     );

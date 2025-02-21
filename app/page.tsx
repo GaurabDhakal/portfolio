@@ -45,13 +45,13 @@ export default function Home() {
                                         console.log(tags);
                                         return (
                                             <Card
-                                                key={key}
+                                                key={key + 43}
                                                 title={title}
                                                 date={ISO_To_Normal(createdOn)}
-                                                type={
+                                                types={
                                                     tags?.[0]
-                                                        ? tags?.[0]
-                                                        : "No tags"
+                                                        ? [tags?.[0]]
+                                                        : ["No tags"]
                                                 }
                                                 href={"/blog/" + id}
                                                 location="home"
@@ -61,7 +61,7 @@ export default function Home() {
                                         return (
                                             <div
                                                 className="text-red-500"
-                                                key={key}
+                                                key={key + 3}
                                             >
                                                 {"An error occurred"}
                                             </div>

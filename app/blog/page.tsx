@@ -34,10 +34,10 @@ const Blog = () => {
                                 const { title, createdOn, tags, id } = post;
                                 return (
                                     <Card
-                                        key={key}
+                                        key={key + 39}
                                         title={title}
                                         date={ISO_To_Normal(createdOn)}
-                                        type={tags?.[0] ? tags?.[0] : "No tags"}
+                                        types={tags || ["No Tags"]}
                                         href={"/blog/" + id}
                                         location="blog"
                                     />
