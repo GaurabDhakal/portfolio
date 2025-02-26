@@ -4,6 +4,9 @@ import { Client } from "@notionhq/client"
 import { NotionToMarkdown } from "notion-to-md"
 import { GetPageResponse, PartialDatabaseObjectResponse, PageObjectResponse, DatabaseObjectResponse } from "@notionhq/client/build/src/api-endpoints"
 
+
+const postsCache: Record<string, TBlog | { error: string }> = {}
+
 const notion = new Client({
     auth: process.env?.NOTION_API_KEY
 })
@@ -66,12 +69,15 @@ export async function fetchNotionPosts(limit?: number) {
         const posts = await Promise.all(
             response.results.map(async (page) => {
                 const finalOutput = await postFormatter(page)
+                if ("id" in finalOutput) {
+                    postsCache[finalOutput.id] = finalOutput
+                }
+
                 return finalOutput
             })
         );
         return posts
     } catch (error) {
-        console.log(error)
         return {
             error: error as string
         }
@@ -88,6 +94,9 @@ export async function fetchNotionPostById(id: string) {
         return {
             error: "Post id is required!"
         }
+    }
+    if (id in postsCache) {
+        return postsCache[id]
     }
     try {
         const metaData = await notion.pages.retrieve({

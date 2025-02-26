@@ -42,7 +42,6 @@ export default function Home() {
                                     ) {
                                         const { title, createdOn, tags, id } =
                                             post;
-                                        console.log(tags);
                                         return (
                                             <Card
                                                 key={key + 43}
