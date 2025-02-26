@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter} from "next/navigation";
 import { useDynamicTitle } from "@/hooks/useDynamicTitle";
 import { useQuery } from "@tanstack/react-query";
 import { fetchNotionPostById } from "@/actions/blogActions";
@@ -8,7 +8,6 @@ import Spinner from "@/components/LoadingSpinner";
 import { TBlog } from "@/types";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { ISO_To_Normal } from "@/utils/dateFormatter";
-import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
 const SpecificBlog = () => {
@@ -50,7 +49,7 @@ const SpecificBlog = () => {
                         transition={{ duration: 0.4 }}
                     >
                         <div>
-                            <a
+                            <button
                                 className="flex select-none items-center justify-between space-x-3 btnSelector cursor-pointer border-1 border-transparent p-2 hover:border-cyan-100 w-fit transition-all duration-300 rounded-xl"
                                 onClick={(e) => {
                                     e.preventDefault();
@@ -78,7 +77,7 @@ const SpecificBlog = () => {
                                 <div>
                                     <p>Back</p>
                                 </div>
-                            </a>
+                            </button>
                         </div>
                         <div className="px-2">
                             <p className="text-[40px] font-[800]">

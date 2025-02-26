@@ -7,6 +7,7 @@ type TCard = {
     location: "blog" | "home";
 };
 import { Tag } from "./Tag";
+
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 export const Card = ({ title, date, types, href, location }: TCard) => {
