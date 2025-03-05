@@ -76,7 +76,7 @@ export async function fetchNotionPosts(limit?: number) {
                 return finalOutput
             })
         );
-        return posts
+        return { allPosts: posts, cache: postsCache }
     } catch (error) {
         return {
             error: error as string
@@ -95,7 +95,12 @@ export async function fetchNotionPostById(id: string) {
             error: "Post id is required!"
         }
     }
+    console.log("FetchNotionPostByID was called")
+    //additional cache 
     if (id in postsCache) {
+        console.log(
+            "Cache HIT!"
+        )
         return postsCache[id]
     }
     try {
