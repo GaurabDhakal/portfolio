@@ -23,6 +23,9 @@ export default function Home() {
         }
     }, [data, setPostsCache]);
     useDynamicTitle();
+    if(isLoading){
+        return <div className="h-100 flex items-center justify-center"> <LoadingBar /></div>
+    }
     return (
         <div className="text-white flex flex-col items-center justify-center space-y-2 sm:space-y-15 lg:my-12 ">
             <div className="p-5">
