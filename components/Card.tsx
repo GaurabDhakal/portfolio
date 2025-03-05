@@ -1,4 +1,9 @@
 "use client";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { Tag } from "./Tag";
+import Link from "next/link";
 type TCard = {
     title: string;
     date: string;
@@ -6,25 +11,27 @@ type TCard = {
     href: string;
     location: "blog" | "home";
 };
-import { Tag } from "./Tag";
 
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
 export const Card = ({ title, date, types, href, location }: TCard) => {
     const router = useRouter();
 
+    // Prefetch the route when the component mounts
+    useEffect(() => {
+        router.prefetch(href);
+    }, [href, router]); 
+
     return (
+        <Link href={href} passHref>
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ x: 10 }}
-            className="flex select-none flex-col cursor-pointer justify-between h-full"
-            onClick={() => {
-                router.push(href);
-            }}
+            className={`flex select-none flex-col cursor-pointer  ${location=="home"?"space-y-10":"space-y-2 mb-7"} h-full`}
         >
             <div
-                className={`text-xl font-bold max-h-20 ${location == "home" ? "line-clamp-2 max-w-60" : ""}`}
+                className={`text-xl font-bold max-h-20 ${
+                    location === "home" ? "line-clamp-2 max-w-60" : ""
+                }`}
             >
                 <p>{title}</p>
             </div>
@@ -40,6 +47,6 @@ export const Card = ({ title, date, types, href, location }: TCard) => {
                     ))}
                 </div>
             </div>
-        </motion.div>
+        </motion.div></Link>
     );
 };
