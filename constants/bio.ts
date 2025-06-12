@@ -13,16 +13,16 @@ export const ABOUT = `${FIRST_NAME}, a Kathmandu-based learner, is passionately 
 export const EDUCATION = {
     history: [
         {
-            gradeRange: "Nursery – Grade 4",
+            gradeRange: "Nursery - Grade 4",
             institute: "Sungava Basic School",
-            yearsAttended: "2010 – 2016",
+            yearsAttended: "2010 - 2016",
             summary: "Laid the foundation for learning and curiosity.",
             location: "Sallebas, Mandandeupur, Kavre"
         },
         {
             gradeRange: "Grade 6 (Nepali Medium)",
             institute: "Shree Baluwa Secondary School",
-            yearsAttended: "2016 – 2017",
+            yearsAttended: "2016 - 2017",
             summary: "A transitional phase with new experiences.",
             location: "Baluwapati, Mandandeupur, Kavre"
         },
@@ -34,16 +34,16 @@ export const EDUCATION = {
             location: "Kapan, Kathmandu"
         },
         {
-            gradeRange: "Grade 6 – Grade 10",
+            gradeRange: "Grade 6 - Grade 10",
             institute: "Progressive English Secondary School",
-            yearsAttended: "2018 – 2022",
+            yearsAttended: "2018 - 2022",
             summary: "A transformative journey that shaped my academic and personal growth.",
             location: "Mahankal, Kathmandu"
         },
         {
-            gradeRange: "Grade 11 – Grade 12",
+            gradeRange: "Grade 11 - Grade 12",
             institute: "Reliance International Academy",
-            yearsAttended: "2022 – 2024",
+            yearsAttended: "2022 - 2024",
             summary: "A period of refinement, exploration, and self-discovery.",
             location: "Saraswatinagar, Kathmandu"
         }
