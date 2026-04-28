@@ -15,7 +15,7 @@ export const FULL_NAME = `${FIRST_NAME} ${LAST_NAME}`;
 
 export const PLACE_LIVING = "Kathmandu, Nepal";
 export const HERO_MAIN =
-    "Simple guy, who's trying his best to achieve his goals.";
+    "Simple guy, who's giving his best to achieve his goals.";
 
 export const BASIC_EXPANDED_INTRO_TEXT = `Hello, I'm ${FULL_NAME}, a ${AGE}-year-old bachelors student from ${PLACE_LIVING}. I'm currently diving deep into web development 💻 while aspiring to become a skilled AI/ML engineer.`;
 
