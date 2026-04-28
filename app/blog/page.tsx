@@ -15,7 +15,9 @@ const Blog = () => {
     <div className="flex items-center justify-center">
       <div className="flex flex-col space-y-5">
         <div className="text-white">
-          <p className="text-4xl font-bold">Writing About Web Development & AI...</p>
+          <p className="text-3xl md:text-4xl font-bold text-center">
+            Writing About Web Development & AI
+          </p>
         </div>
         <div className="px-5 flex flex-col gap-5">
           {data.map((blog) => (
