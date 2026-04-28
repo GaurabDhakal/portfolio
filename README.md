@@ -3,6 +3,7 @@
 Welcome to my personal portfolio website! This website showcases my skills, projects, and achievements as a software engineer. It is designed to give you an overview of who I am, what I do, and the technologies I work with.
 
 ## Table of Contents
+
 - [My Portfolio Website](#my-portfolio-website)
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
@@ -17,11 +18,12 @@ This portfolio website is a personal project built to highlight my journey as a 
 ## Technologies Used
 
 The following technologies were used to build this portfolio website:
-- **Frontend**: 
+
+- **Frontend**:
   - Next.js (for interactive UI components)
   - Tailwind CSS (for modern, responsive design)
-- **Deployment**: 
-  - Deployed on [Netlify](https://www.gaurabdhakl.com.np/) 
+- **Deployment**:
+  - Deployed on [Netlify](https://www.gaurabdhakl.com.np/)
 
 ## Features
 
@@ -37,11 +39,15 @@ To run this portfolio website locally, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/gaurabdhakl/portfolio.git
+   ```
 2. Navigate to the project folder:
 
-    ```bash
-    cd portfolio
+   ```bash
+   cd portfolio
+   ```
+
 3. Install the dependencies
-     ```bash
-     npm install 
+   ```bash
+   npm install
+   ```
 4. Make changes in the constant folder

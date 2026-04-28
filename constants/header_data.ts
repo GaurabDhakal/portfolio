@@ -1,8 +1,8 @@
-import { NAME } from "@/constants/bio"
+import { FULL_NAME } from "@/constants/bio";
 export const titles = {
-    "/": `Home - ${NAME}`,
-    "/blog": `Blog - ${NAME}`,
-    "/blog/*": `Blog Post - ${NAME}`,
-    "/about": ` About - ${NAME}`,
-    "/work": `Work -  ${NAME}`
-}
+  "/": `Home - ${FULL_NAME}`,
+  "/blog": `Blog - ${FULL_NAME}`,
+  "/blog/*": `Blog Post - ${FULL_NAME}`,
+  "/about": ` About - ${FULL_NAME}`,
+  "/work": `Work -  ${FULL_NAME}`,
+};

@@ -3,13 +3,13 @@ import { create } from "zustand";
 import { TBlog } from "@/types";
 
 type State = {
-    postsCache: Record<string, TBlog | { error: string }>
-}
+  postsCache: Record<string, TBlog | { error: string }>;
+};
 type Action = {
-    setPostsCache:(postsCache:State["postsCache"])=>void
-}
+  setPostsCache: (postsCache: State["postsCache"]) => void;
+};
 export const usePostsCache = create<State & Action>((set) => ({
-    postsCache: {},
-    setPostsCache: (postsCache: Record<string, TBlog | { error: string }>) =>
-        set(() => ({ postsCache: postsCache })),
+  postsCache: {},
+  setPostsCache: (postsCache: Record<string, TBlog | { error: string }>) =>
+    set(() => ({ postsCache: postsCache })),
 }));

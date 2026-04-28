@@ -1,11 +1,7 @@
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <div className="text-white">
-            {children}
-        </div>
-    );
+  return <div className="text-white mt-22">{children}</div>;
 }
