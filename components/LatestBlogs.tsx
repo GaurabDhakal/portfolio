@@ -17,7 +17,7 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
       <div>
         <p className="text-4xl font-extrabold max-w-sm text-center">My Latest Blogs</p>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 w-full md:w-fit">
         {data
           ? data.map((blog) => {
               const { slug, description, date, title } = blog;
