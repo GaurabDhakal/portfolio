@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Suspense } from "react";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const interSans = Inter({
   variable: "--font-inter-sans",
@@ -24,13 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Navbar />
         </div>
         <main className="p-4 flex grow items-center flex-col mt-16 md:mt-22">
-          <Suspense
-            fallback={
-              <span className="text-red-800 flex items-center justify-center">Loading......</span>
-            }
-          >
-            <Providers>{children}</Providers>
-          </Suspense>
+          <Providers>{children}</Providers>
         </main>
         <Footer />
       </body>

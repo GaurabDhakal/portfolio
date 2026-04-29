@@ -1,12 +1,13 @@
 import Link from "next/link";
-
 type TBlogList = {
   slug: string;
   title: string;
   description: string;
   date: string;
 };
-export const BlogList = ({ slug, title, description, date }: TBlogList) => {
+export const BlogList = (data: TBlogList) => {
+  const { slug, title, description, date } = data;
+
   return (
     <Link
       href={`/blog/${slug}`}
