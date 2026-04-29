@@ -20,7 +20,7 @@ export const Card = ({ title, date, types, href, location }: TCard) => {
   }, [href, router]);
 
   return (
-    <Link href={href} passHref>
+    <Link href={href} passHref aria-label={title}>
       <div
         className={`flex select-none flex-col cursor-pointer  ${location == "home" ? "space-y-10" : "space-y-2 mb-7"} h-full`}
       >

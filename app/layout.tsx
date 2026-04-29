@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { Providers } from "./providers";
 import { Footer } from "@/components/Footer";
 import { cn } from "@/lib/utils";
+import { Metadata } from "next";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -12,6 +13,20 @@ const interSans = Inter({
   subsets: ["latin"],
   weight: ["400", "600", "700", "800", "900"],
 });
+
+export const metadata: Metadata = {
+  title: {
+    default: "Gaurab | Developer",
+    template: "%s - Gaurab",
+  },
+  description: "Full stack developer and aspiring data scientist",
+  openGraph: {
+    url: "https://gaurabdhakal.com.np",
+    siteName: "Gaurab Dhakal",
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

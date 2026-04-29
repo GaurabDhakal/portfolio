@@ -55,7 +55,7 @@ export const MainAbout = () => {
         <div className="flex space-x-2 space-y-2 sm:space-y-0 items-center flex-wrap">
           {FooterIcons.map(({ svg, link, name }, index) => (
             <TagWithIcons key={index + name}>
-              <a href={link} className="flex" target="_blank">
+              <a href={link} className="flex" target="_blank" aria-label={name}>
                 {svg} <span className="ml-1">{name}</span>
               </a>
             </TagWithIcons>

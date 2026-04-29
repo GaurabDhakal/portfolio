@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const ButtonWrapper = ({ href, text }: { href: string; text: string }) => {
   return (
-    <Link href={href}>
+    <Link href={href} aria-label={text}>
       <Button className="cursor-pointer" variant={"secondary"} asChild>
         <span>
           <span>{text}</span>

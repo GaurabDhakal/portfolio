@@ -11,6 +11,7 @@ export const BlogList = (data: TBlogList) => {
   return (
     <Link
       href={`/blog/${slug}`}
+      aria-label={title}
       className="group flex flex-col gap-1.5 border-l-2 border-white/10 pl-4 
                  transition-all duration-200 hover:border-[#97ffc1]"
     >

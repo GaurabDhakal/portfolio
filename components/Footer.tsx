@@ -15,8 +15,8 @@ export const Footer = () => {
         </div>
 
         <div className="flex gap-2 text-white">
-          {FooterIcons.map(({ svg, link }, index) => (
-            <a key={index + 22} href={link} className="flex" target="_blank">
+          {FooterIcons.map(({ svg, link, name }, index) => (
+            <a key={index + 22} href={link} className="flex" aria-label={name} target="_blank">
               {svg}
             </a>
           ))}
