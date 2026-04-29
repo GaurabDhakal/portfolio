@@ -11,11 +11,11 @@ const Intro = () => {
           <p>{HERO_MAIN}</p>
         </div>
         <div className="border-t-2 border-gray-500 rounded-lg my-4 max-w-205" />
-        <div className="max-w-210 text-xl text-neutral-300/75 font-medium">
+        <div className="max-w-210  text-neutral-300/75 font-medium">
           <p>{BASIC_EXPANDED_INTRO_TEXT}</p>
         </div>
       </div>
-      <div className="flex space-x-5">
+      <div className="flex gap-2">
         <ButtonWrapper text="About me" href="/about" />
         <ButtonWrapper text="Blog" href="/blog" />
         <ButtonWrapper text="Work" href="/work" />

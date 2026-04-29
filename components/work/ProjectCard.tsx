@@ -17,7 +17,6 @@ export const ProjectCard = ({
   demo_link: string;
   animationOptions?: { axis_direction: number };
 }) => {
-  console.log(animationOptions);
   const handleGithubClick = () => {
     window.open(github_link, "_blank");
   };

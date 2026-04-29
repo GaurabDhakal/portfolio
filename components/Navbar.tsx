@@ -56,13 +56,13 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
 
       <div className="flex items-center justify-between w-full">
         {/* Left Side */}
-        <div className="flex-1 text-white hidden lg:block text-center font-semibold">
+        <div className="flex-1 text-white hidden md:block text-center font-semibold">
           {timeZone}
         </div>
 
         {/* Center Navbar */}
         <div className="flex-1 flex justify-center w-full select-none">
-          <nav className="flex items-center font-semibold w-full justify-center p-4 md:p-1.5 bg-[#19181e4c] border border-gray-400/50 text-white m-5 rounded-2xl ">
+          <nav className="flex items-center font-semibold w-full justify-center p-2 md:p-1.5 bg-[#19181e4c] md:border md:border-gray-400/50 text-white m-3 md:m-5 rounded-2xl ">
             <ul className="w-full">
               <li className="flex items-center justify-around gap-2 sm:space-x-0.75">
                 {NavbarLinks.map(({ icon, text, href, hasChildren }) => (
@@ -73,13 +73,15 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
                       e.preventDefault();
                       handleClick(href);
                     }}
-                    className={`${
-                      (path === href || (path.startsWith(href) && hasChildren)) &&
-                      "sm:bg-[#3e3e3e] sm:border-gray-400/50 sm:text-white text-[#4c9183]"
-                    } flex items-center justify-center space-x-3 rounded-xl border border-transparent active:text-[#293bff] p-0 sm:px-8 py-0 sm:py-1.5 transition-all duration-500 sm:hover:border-gray-400/50 sm:hover:bg-[#3e3e3e]`}
+                    className={`
+                      ${
+                        (path === href || (path.startsWith(href) && hasChildren)) &&
+                        "sm:bg-[#3e3e3e]  sm:border-gray-400/50 sm:text-white text-[#4c9183]"
+                      }
+                       flex flex-col md:flex-row items-center justify-center md:gap-2 rounded-xl border border-transparent active:text-[#293bff] p-0 sm:px-8 py-0 sm:py-1.5 transition-all duration-500 sm:hover:border-gray-400/50 sm:hover:bg-[#3e3e3e]`}
                   >
-                    {icon}
-                    <span className="hidden sm:inline">{text}</span>
+                    <span>{icon}</span>
+                    <span className="text-xs sm:inline md:text-[15px]">{text}</span>
                   </a>
                 ))}
               </li>
@@ -88,7 +90,7 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
         </div>
 
         {/* Right Side */}
-        <div className="flex-1 text-white hidden lg:block text-center font-semibold">
+        <div className="flex-1 text-white hidden md:block text-center font-semibold">
           <p>{time}</p>
         </div>
       </div>
