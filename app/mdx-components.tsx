@@ -9,18 +9,9 @@ export const mdxComponents = {
   ),
 
   pre: ({ children }) => (
-    <pre className="bg-zinc-900 text-zinc-100 p-4 rounded-xl overflow-x-auto max-w-[calc(100vw-2rem)] border border-zinc-800 shadow-lg text-sm sm:text-base">
+    <pre className="bg-zinc-900 text-zinc-100 p-4 rounded-xl overflow-x-auto max-w-[calc(100vw-2rem)] border border-zinc-800 shadow-lg text-sm sm:text-base my-3">
       {children}
     </pre>
-  ),
-
-  code: ({ children, ...props }) => (
-    <code
-      className="bg-zinc-500 text-green-400 px-1.5 py-0.5 rounded-md font-mono text-xs sm:text-sm wrap-break-word"
-      {...props}
-    >
-      {children}
-    </code>
   ),
 
   img: (props) => (
