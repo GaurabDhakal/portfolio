@@ -11,7 +11,7 @@ export default function Home() {
         <Intro />
       </div>
       <div className="w-full">
-        <LatestBlogs limit={2} />
+        <LatestBlogs limit={1} />
       </div>
     </div>
   );

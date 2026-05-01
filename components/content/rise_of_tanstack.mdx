@@ -1,0 +1,79 @@
+---
+title: "The Rise of TanStack: How One Developer Changed the React Ecosystem"
+date: "2025-05-01"
+author: "Gaurab Dhakal"
+description: "From a single library to a full ecosystem - the story of TanStack and why every frontend developer should care."
+tags: ["react", "tanstack", "javascript", "frontend"]
+---
+
+
+If you have spent any meaningful time in the React ecosystem over the past few years, you have almost certainly encountered **TanStack**. What started as a single open-source library for managing server state has evolved into one of the most influential ecosystems in modern frontend development.
+
+## Where It All Began
+
+It started with **React Query**, created by [Tanner Linsley](https://github.com/tannerlinsley) in 2019. At the time, the React community was drowning in Redux boilerplate just to fetch and cache API data. React Query came in with a radical idea - server state and client state are fundamentally different, and they should be managed differently.
+
+The library was an instant hit. Developers loved the simplicity:
+
+```tsx
+const { data, isLoading, error } = useQuery({
+  queryKey: ["posts"],
+  queryFn: fetchPosts,
+});
+```
+
+No reducers. No action creators. No sagas. Just data.
+
+## The Rebrand and Expansion
+
+In 2022, Tanner rebranded the project as **TanStack** - a collection of headless, type-safe, and framework-agnostic libraries. This was a pivotal move. The vision was no longer just React Query; it was a full ecosystem of tools built around the same core philosophy: *powerful, unopinionated, and framework-agnostic*.
+
+Today, TanStack includes:
+
+- **TanStack Query** - Async state management (formerly React Query)
+- **TanStack Table** - Headless table logic with full control over UI
+- **TanStack Router** - A fully type-safe router, a direct challenger to React Router
+- **TanStack Form** - Type-safe form management
+- **TanStack Virtual** - Virtualization for massive lists and grids
+- **TanStack Start** - A full-stack framework built on TanStack Router
+
+## Why TanStack Router Is a Big Deal
+
+TanStack Router deserves its own spotlight. Routing has always been the wild west in React land. React Router has dominated for years, but TanStack Router entered the scene with something nobody else had - **100% type-safe routing out of the box**.
+
+```tsx
+const postRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/posts/$postId",
+  loader: ({ params }) => fetchPost(params.postId),
+});
+```
+
+Your params are typed. Your search params are typed. Your loader data is typed. If you refactor a route path, TypeScript *will* catch every broken link in your codebase. That is not a feature React Router could match at the time.
+
+## The Framework-Agnostic Vision
+
+One of TanStack's most underrated achievements is that most of its libraries now support **React, Vue, Solid, Svelte, and Angular**. This is extremely hard to pull off without sacrificing the developer experience, yet TanStack manages to do it cleanly by separating core logic from framework adapters.
+
+This makes TanStack not just a React ecosystem, but a frontend ecosystem.
+
+## The Community and Momentum
+
+The numbers speak for themselves. TanStack Query alone crossed **40 million monthly npm downloads** in 2024. TanStack Router grew from a niche alternative to a serious production-ready option adopted by companies ranging from startups to large enterprises.
+
+The Discord community is active, the GitHub issues are responded to quickly, and Tanner remains deeply involved. Open source projects of this scale often suffer from maintainer burnout, but TanStack has built a sustainable contributor model.
+
+## What This Means for You
+
+Whether you are building a small side project or a large-scale production application, the TanStack ecosystem offers tools that are:
+
+- **Headless** - you control the UI completely
+- **Type-safe** - TypeScript is a first-class citizen, not an afterthought
+- **Framework-agnostic** - your knowledge transfers across frameworks
+- **Battle-tested** - used in production by thousands of teams
+
+The rise of TanStack is a reminder that great developer experience, strong opinions about the *right* problems, and a commitment to type safety can change an entire ecosystem.
+
+---
+
+*Tanner Linsley once said that the goal was never to build the most popular library - it was to build the most useful one. He managed to do both.*

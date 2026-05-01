@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { useDynamicTitle } from "@/hooks/useDynamicTitle";
 import { ProjectCard } from "@/components/work/ProjectCard";
 import { projects } from "@/constants/projects";

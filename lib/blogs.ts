@@ -6,6 +6,9 @@ import matter from "gray-matter";
 
 const blogsDir = path.join(process.cwd(), "components/content");
 
+type TEnv = "dev" | "prod";
+
+const env: TEnv = process.env.INSTANCE as TEnv;
 export type BlogMeta = {
     slug: string;
     title: string;
@@ -19,7 +22,14 @@ export async function getAllBlogs(limit = -1): Promise<BlogMeta[]> {
     const files = fs.readdirSync(blogsDir);
 
     const sorted = files
-        .filter((f) => f.endsWith(".mdx"))
+        .filter((f) => {
+            let shouldReturn = f.endsWith(".mdx");
+            if (env != "dev") {
+                shouldReturn = !f.endsWith(".test.mdx");
+                console.log(shouldReturn);
+            }
+            return shouldReturn;
+        })
         .map((filename) => {
             const slug = filename.replace(".mdx", "");
             const raw = fs.readFileSync(path.join(blogsDir, filename), "utf-8");

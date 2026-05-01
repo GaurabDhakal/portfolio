@@ -1,14 +1,15 @@
 // blogs/[slug]/page.tsx
+
 import { getAllBlogs, getBlogBySlug } from "@/lib/blogs";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
+import { mdxComponents } from "@/app/mdx-components"; // 👈 ADD THIS
 
 export async function generateStaticParams() {
   const blogs = await getAllBlogs();
   return blogs.map((blog) => ({ slug: blog.slug }));
 }
 
-// dynamic metadata per blog
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const blog = await getBlogBySlug(slug);
@@ -25,13 +26,17 @@ export default async function SpecificBlog({
 }: Readonly<{ params: Promise<{ slug: string }> }>) {
   const { slug } = await params;
   const data = await getBlogBySlug(slug);
-  if (!data) notFound(); // renders your not-found.tsx
+  console.log(data);
+  if (!data) notFound();
 
   return (
-    <article>
-      <h1>{data.frontmatter.title}</h1>
-      <p>{data.frontmatter.date}</p>
-      <MDXRemote source={data.content} />
+    <article className="prose prose-invert md:max-w-200 overflow-hidden flex flex-col gap-4">
+      <div>
+        <p className="font-extrabold text-3xl md:text-4xl ">{data.frontmatter.title}</p>
+      </div>
+      <div className="px-1">
+        <MDXRemote source={data.content} components={mdxComponents} />
+      </div>
     </article>
   );
 }

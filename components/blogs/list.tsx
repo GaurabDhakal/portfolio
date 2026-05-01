@@ -4,16 +4,17 @@ type TBlogList = {
   title: string;
   description: string;
   date: string;
+  orientation?: "compact" | "free";
 };
-export const BlogList = (data: TBlogList) => {
-  const { slug, title, description, date } = data;
+export const BlogList = (props: TBlogList) => {
+  const { slug, title, description, date, orientation } = props;
 
   return (
     <Link
       href={`/blog/${slug}`}
       aria-label={title}
-      className="group flex flex-col gap-1.5 border-l-2 border-white/10 pl-4 
-                 transition-all duration-200 hover:border-[#97ffc1]"
+      className={`group flex flex-col gap-1.5 border-l-2 border-white/10 pl-4 
+                 transition-all duration-200 hover:border-[#97ffc1] ${orientation == "compact" ? "max-w-100" : ""}`}
     >
       <p
         className="font-semibold text-white/90 transition-colors duration-200 

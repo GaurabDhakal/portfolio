@@ -12,10 +12,11 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
       return await getAllBlogs(limit);
     },
   });
+
   return (
     <section className="flex flex-col md:flex-row gap-6 items-center justify-around w-full">
       <div>
-        <p className="text-4xl font-extrabold max-w-sm text-center">My Latest Blogs</p>
+        <p className="text-4xl font-extrabold max-w-sm text-center">My Latest Blog</p>
       </div>
       <div className="flex flex-col gap-4 w-full md:w-fit">
         {data
@@ -28,6 +29,7 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
                   title={title}
                   description={description}
                   date={date}
+                  orientation="compact"
                 />
               );
             })
