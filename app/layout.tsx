@@ -15,14 +15,38 @@ const interSans = Inter({
 });
 
 export const metadata: Metadata = {
+  applicationName: "Gaurab Dhakal",
+  referrer: "origin-when-cross-origin",
+  keywords: [
+    "Gaurab Dhakal",
+    "Gaurab Dhakal developer",
+    "Gaurab Dhakal portfolio",
+    "Gaurab Dhakal Nepal",
+    "web developer Nepal",
+    "full stack developer Nepal",
+    "Next.js developer Nepal",
+    "React developer portfolio",
+    "JavaScript developer portfolio",
+    "AI enthusiast Nepal",
+    "aspiring data scientist Nepal",
+    "frontend developer portfolio",
+    "backend developer portfolio",
+    "student developer Nepal",
+    "hire web developer Nepal",
+    "portfolio website developer Nepal",
+  ],
+  creator: "Gaurab Dhakal",
+
   title: {
-    default: "Gaurab | Developer",
+    default: "Gaurab Dhakal",
     template: "%s - Gaurab",
   },
-  description: "Full stack developer and aspiring data scientist",
+  description: "Full stack developer and aspiring Ai/ML Engineer",
   openGraph: {
     url: "https://gaurabdhakal.com.np",
     siteName: "Gaurab Dhakal",
+    title: "Gaurab Dhakal",
+    description: "Full stack developer and aspiring Ai/ML Engineer",
     locale: "en_US",
     type: "website",
   },
