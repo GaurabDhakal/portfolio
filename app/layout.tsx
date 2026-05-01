@@ -61,7 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className="fixed top-0 bottom-auto w-full z-50 backdrop-blur-md">
           <Navbar />
         </div>
-        <main className="p-4 flex grow items-center flex-col mt-16 md:mt-22">
+        <main className="py-4 px-3 flex grow items-center flex-col mt-16 md:mt-22">
           <Providers>{children}</Providers>
         </main>
         <Footer />

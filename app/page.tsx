@@ -6,7 +6,7 @@ import { LatestBlogs } from "@/components/LatestBlogs";
 export default function Home() {
   useDynamicTitle();
   return (
-    <div className="text-white flex flex-col items-center justify-center p-5 gap-10">
+    <div className="text-white flex flex-col items-center justify-center p-5 gap-10 mt-1">
       <div>
         <Intro />
       </div>

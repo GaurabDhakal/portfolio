@@ -31,7 +31,7 @@ export default async function SpecificBlog({
   if (!data) notFound();
 
   return (
-    <article className="prose prose-invert md:max-w-200 overflow-hidden flex flex-col gap-4">
+    <article className="prose prose-invert md:max-w-200 overflow-hidden flex flex-col gap-4 px-1">
       <div>
         <p className="font-extrabold text-3xl md:text-4xl ">{data.frontmatter.title}</p>
       </div>
