@@ -12,7 +12,7 @@ export const EducationCard = ({
   short_summary: string;
 }) => {
   return (
-    <div className="text-white">
+    <div className="text-white w-full">
       <div className="flex items-center justify-between space-y-2">
         <div className="flex-3 sm:flex-1">
           <div className="flex flex-col">
