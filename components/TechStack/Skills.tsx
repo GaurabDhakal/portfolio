@@ -6,7 +6,7 @@ export const Skills = ({ skills }: { skills: TSkill[] }) => {
       {skills.map((skill) => (
         <div key={skill.skill_name} className="flex flex-col items-center justify-center gap-1">
           {skill.icon ? (
-            <Image src={skill.icon} alt={skill.icon} height={60} width={60} className="aspect-square"></Image>
+            <Image src={skill.icon} alt={skill.icon} height={56} width={56} className="aspect-square"></Image>
           ) : (
             ""
           )}

@@ -58,7 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body
         className={`${interSans.className} antialiased h-screen flex flex-col bg-[#1A181B] selection:bg-[#e0e0e0] selection:text-[#3f3f3f] `}
       >
-        <div className="fixed top-0 bottom-auto w-full z-50 backdrop-blur-md">
+        <div className="fixed top-0 bottom-auto w-full z-50 ">
           <Navbar />
         </div>
         <main className="py-4 px-3 flex grow items-center flex-col mt-16 md:mt-22">

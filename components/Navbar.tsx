@@ -50,19 +50,19 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
   }, [timeZone, locale]);
 
   return (
-    <div className="flex flex-col w-full bg-[#160f194c] md:bg-transparent rounded">
+    <div className="flex flex-col w-full bg-[#160f194c] md:bg-transparent rounded md:backdrop-blur-md">
       {/* Loading Bar */}
       {isPending && <div className="absolute top-0 left-0 w-full h-1 bg-blue-500 animate-pulse" />}
 
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between w-full ">
         {/* Left Side */}
         <div className="flex-1 text-white hidden md:block text-center font-semibold">
           {timeZone}
         </div>
 
         {/* Center Navbar */}
-        <div className="flex-1 flex justify-center w-full select-none">
-          <nav className="flex items-center font-semibold w-full justify-center p-2 md:p-1.5 bg-[#19181e4c] md:border md:border-gray-400/50 text-white m-3 md:m-5 rounded-2xl ">
+        <div className="flex-1 flex justify-center w-full select-none ">
+          <nav className="flex items-center font-semibold w-full justify-center p-2 md:p-1.5 bg-[#15151b82] md:bg-transparent md:backdrop-blur-none border md:border-gray-400/50 text-white my-2 mx-4 md:m-5 rounded-3xl backdrop-blur-lg">
             <ul className="w-full">
               <li className="flex items-center justify-around gap-2 sm:space-x-0.75">
                 {NavbarLinks.map(({ icon, text, href, hasChildren }) => (
@@ -76,9 +76,9 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
                     className={`
                       ${
                         (path === href || (path.startsWith(href) && hasChildren)) &&
-                        "sm:bg-[#3e3e3e]  sm:border-gray-400/50 sm:text-white text-[#4c9183]"
+                        "sm:bg-[#3e3e3e]  sm:border-gray-400/50 sm:text-white text-[#627a73]"
                       }
-                       flex flex-col md:flex-row items-center justify-center md:gap-2 rounded-xl border border-transparent active:text-[#293bff] p-0 sm:px-8 py-0 sm:py-1.5 transition-all duration-500 sm:hover:border-gray-400/50 sm:hover:bg-[#3e3e3e]`}
+                       flex flex-col md:flex-row items-center justify-center md:gap-2 rounded-xl border border-transparent active:text-white/50 p-0 sm:px-8 py-0 sm:py-1.5 transition-all duration-500 sm:hover:border-gray-400/50 sm:hover:bg-[#3e3e3e]`}
                   >
                     <span>{icon}</span>
                     <span className="text-xs sm:inline md:text-[15px]">{text}</span>
