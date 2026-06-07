@@ -78,7 +78,8 @@ export type categories =
     | "authentication"
     | "styling"
     | "state_management"
-    | "programming_languages";
+    | "programming_languages"
+    | "full_stack";
 
 export type TECH_STACK_T_REVAMPED = Record<categories, TSkill[]>;
 export const TECH_STACK_N: TECH_STACK_T_REVAMPED = {
@@ -110,10 +111,25 @@ export const TECH_STACK_N: TECH_STACK_T_REVAMPED = {
     ],
     frontend: [
         {
+            skill_name: "React JS",
+            level: "Advanced",
+            screenshots: [],
+            level_code: 3,
+            icon: "/icons/react.svg",
+        },
+        {
+            skill_name: "Svelte",
+            level: "Beginner",
+            icon: "/icons/svelte.svg",
+            level_code: 1,
+        },
+    ],
+    full_stack: [
+        {
             skill_name: "Next.js",
             level: "Intermediate",
             screenshots: [],
-            level_code: 3,
+            level_code: 2,
             icon: "/icons/nextjs.svg",
         },
         {
@@ -122,12 +138,6 @@ export const TECH_STACK_N: TECH_STACK_T_REVAMPED = {
             level_code: 2,
             icon: "/icons/tanstack.svg",
             screenshots: [],
-        },
-        {
-            skill_name: "Svelte",
-            level: "Beginner",
-            icon: "/icons/svelte.svg",
-            level_code: 1,
         },
     ],
     backend: [
