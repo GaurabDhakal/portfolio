@@ -3,10 +3,10 @@ import Image from "next/image";
 import { Tag } from "@/components/Tag";
 import { TagWithIcons } from "@/components/TagWithIcons";
 import { FooterIcons } from "@/constants/FooterIcons";
-import { ABOUT, EDUCATION, TECHNICAL_SKILLS, FULL_NAME } from "@/constants/bio";
+import { ABOUT, EDUCATION, FULL_NAME, TECH_STACK_N } from "@/constants/bio";
 
 import { EducationCard } from "../EducationCard";
-import { TechnicalSkillsCard } from "../TechnicalSkillsCard";
+import { TechStackCardRevamped } from "../TechStack/TechStackNew";
 export const MainAbout = () => {
   return (
     <div className="flex flex-col sm:flex-row w-full space-y-3 sm:space-y-0 md:gap-8">
@@ -94,23 +94,13 @@ export const MainAbout = () => {
             </div>
           </div>
         </div>
-        {/* Technical skills section */}
-        <div className="space-y-2">
+        {/* Tech Stack Section */}
+        <div className="flex flex-col gap-1">
           <div>
-            <span className="text-[40px] font-extrabold">Technical Skills</span>
+            <span className="text-4xl font-extrabold">Tech Stack</span>
           </div>
-          <div className="p-1 flex flex-col gap-5">
-            {TECHNICAL_SKILLS.map(({ skill_name, short_summary, screenshots, level }, key) => {
-              return (
-                <TechnicalSkillsCard
-                  skill_name={skill_name}
-                  short_summary={short_summary}
-                  screenshots={screenshots}
-                  level={level}
-                  key={key + level}
-                />
-              );
-            })}
+          <div className="p-1 flex">
+            <TechStackCardRevamped data={TECH_STACK_N} />
           </div>
         </div>
       </div>

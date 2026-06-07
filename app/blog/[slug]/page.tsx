@@ -27,7 +27,6 @@ export default async function SpecificBlog({
 }: Readonly<{ params: Promise<{ slug: string }> }>) {
   const { slug } = await params;
   const data = await getBlogBySlug(slug);
-  console.log(data);
   if (!data) notFound();
 
   return (

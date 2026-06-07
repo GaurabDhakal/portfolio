@@ -26,7 +26,6 @@ export async function getAllBlogs(limit = -1): Promise<BlogMeta[]> {
             let shouldReturn = f.endsWith(".mdx");
             if (env != "dev") {
                 shouldReturn = !f.endsWith(".test.mdx");
-                console.log(shouldReturn);
             }
             return shouldReturn;
         })

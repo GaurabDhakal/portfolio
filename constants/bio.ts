@@ -42,19 +42,157 @@ export const EDUCATION = {
     completeSummary:
         "Throughout my educational journey, I have experienced significant transitions, overcoming challenges such as adapting to new schools, skipping grades, and moving between different locations. These experiences have shaped my resilience, perseverance, and determination to continue learning. Although there have been difficult times, each stage has contributed to my growth, both academically and personally. I am now in a phase of refining my skills, with a focus on future aspirations in web development and AI engineering.",
 };
-export const TECHNICAL_SKILLS = [
+
+export type TSkill = {
+    skill_name: string;
+    level: string;
+    level_code?: 1 | 2 | 3;
+    screenshots?: string[];
+    slug?: string;
+    icon?: string;
+};
+
+export const TECH_STACK: TSkill[] = [
+    {
+        skill_name: "HTML",
+        level: "High",
+        level_code: 3,
+    },
     {
         skill_name: "Next.js",
         level: "Intermediate",
-        short_summary:
-            "I deeply admire Next.js and am continuously working on enhancing my skills in it.",
         screenshots: [],
     },
     {
         skill_name: "Tanstack Start",
         level: "Intermediate",
-        short_summary:
-            "The DX of Tanstack Start is very good which is the reason I started learning it and I am constantly working on getting better at it.",
+
         screenshots: [],
     },
 ];
+
+export type categories =
+    | "frontend"
+    | "backend"
+    | "runtimes"
+    | "authentication"
+    | "styling"
+    | "state_management"
+    | "programming_languages";
+
+export type TECH_STACK_T_REVAMPED = Record<categories, TSkill[]>;
+export const TECH_STACK_N: TECH_STACK_T_REVAMPED = {
+    programming_languages: [
+        {
+            skill_name: "JavaScript",
+            level: "High",
+            level_code: 3,
+            icon: "/icons/js.svg",
+        },
+        {
+            skill_name: "Python",
+            level: "Intermediate",
+            icon: "/icons/python.svg",
+            level_code: 2,
+        },
+        {
+            skill_name: "C++",
+            level: "Beginner",
+            icon: "/icons/cpp.svg",
+            level_code: 1,
+        },
+        {
+            skill_name: "Go",
+            level: "Intermediate",
+            icon: "/icons/go.svg",
+            level_code: 2,
+        },
+    ],
+    frontend: [
+        {
+            skill_name: "Next.js",
+            level: "Intermediate",
+            screenshots: [],
+            level_code: 3,
+            icon: "/icons/nextjs.svg",
+        },
+        {
+            skill_name: "Tanstack Start",
+            level: "Intermediate",
+            level_code: 2,
+            icon: "/icons/tanstack.svg",
+            screenshots: [],
+        },
+        {
+            skill_name: "Svelte",
+            level: "Beginner",
+            icon: "/icons/svelte.svg",
+            level_code: 1,
+        },
+    ],
+    backend: [
+        {
+            skill_name: "Express.js",
+            level: "Intermediate",
+            level_code: 2,
+            icon: "/icons/express.jpg",
+            screenshots: [],
+        },
+        {
+            skill_name: "NestJS",
+            level: "Beginner",
+            icon: "/icons/nestjs.svg",
+            level_code: 1,
+        },
+    ],
+    runtimes: [
+        {
+            skill_name: "Node.JS",
+            level: "Intermediate",
+            icon: "/icons/nodejs.svg",
+            level_code: 2,
+        },
+        {
+            skill_name: "Bun",
+            level: "Intermediate",
+            icon: "/icons/bunjs.svg",
+            level_code: 2,
+        },
+    ],
+    authentication: [
+        {
+            skill_name: "Better Auth",
+            level: "Intermediate",
+            icon: "/icons/better-auth.svg",
+            level_code: 2,
+        },
+        {
+            skill_name: "Clerk",
+            level: "High",
+            level_code: 3,
+            icon: "/icons/clerkjs.svg",
+        },
+    ],
+    styling: [
+        {
+            skill_name: "CSS",
+            level: "High",
+            icon: "/icons/css.svg",
+            level_code: 3,
+        },
+        {
+            skill_name: "Tailwind CSS",
+            level: "High",
+            icon: "/icons/tailwind.svg",
+            level_code: 3,
+        },
+    ],
+    state_management: [
+        {
+            skill_name: "Zustand",
+            level: "High",
+            level_code: 3,
+            icon: "/icons/zustand.svg",
+        },
+    ],
+} as const;

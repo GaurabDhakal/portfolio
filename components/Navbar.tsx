@@ -50,7 +50,7 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
   }, [timeZone, locale]);
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full bg-[#160f194c] md:bg-transparent rounded">
       {/* Loading Bar */}
       {isPending && <div className="absolute top-0 left-0 w-full h-1 bg-blue-500 animate-pulse" />}
 
