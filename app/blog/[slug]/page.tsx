@@ -5,7 +5,6 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import { mdxComponents } from "@/app/mdx-components"; // 👈 ADD THIS
 import rehypeShiki from "@shikijs/rehype";
-import { Clock } from "lucide-react";
 import { BlogTag } from "@/components/blogs/Tag";
 
 export async function generateStaticParams() {
@@ -59,8 +58,10 @@ export default async function SpecificBlog({
         <p className="font-extrabold text-3xl md:text-4xl ">{data.frontmatter.title}</p>
         <div className="text-sm text-white/70 flex flex-col gap-2">
           <div className="flex items-center gap-1 leading-none">
-            <Clock className="w-5 h-5" />
-            <p className="m-0">{data.frontmatter.date}</p>
+            <p className="m-0">
+              <b>Uploaded: </b>
+              {data.frontmatter.date}
+            </p>
           </div>
           <p>{data.frontmatter.description}</p>
           <div className="flex gap-2">
