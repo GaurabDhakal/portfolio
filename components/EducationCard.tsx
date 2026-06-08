@@ -16,13 +16,17 @@ export const EducationCard = ({
       <div className="flex items-center justify-between space-y-2">
         <div className="flex-3 sm:flex-1">
           <div className="flex flex-col">
-            <span className="text-xl font-bold">{institute_name}</span>
-            <span className="text-sm text-[#e1fe92]">{gradeRange}</span>
-            <span className="text-sm text-[#75ba75]">{location}</span>
+            <span className="text-xl font-bold">
+              <p>{institute_name}</p>
+            </span>
+            <span className="text-sm flex gap-2 text-[#e1fe92]">
+              <p>{gradeRange}</p>
+              <p className="text-white/60">({yearsAttended})</p>
+            </span>
+            <span className="text-sm text-[#75ba75]">
+              <p>{location}</p>
+            </span>
           </div>
-        </div>
-        <div className="flex-1 text-white/60">
-          <span>{yearsAttended}</span>
         </div>
       </div>
       <div>

@@ -24,9 +24,9 @@ export const ABOUT = `${FIRST_NAME}, a Kathmandu-based learner, is passionately 
 export const EDUCATION = {
     history: [
         {
-            gradeRange: "till Grade 10",
+            gradeRange: "Upto Grade 10",
             institute: "Progressive English Secondary School",
-            yearsAttended: "till 2022",
+            yearsAttended: "Upto 2022",
             summary:
                 "A transformative journey that shaped my academic and personal growth.",
             location: "Mahankal, Kathmandu",
@@ -152,6 +152,12 @@ export const TECH_STACK_N: TECH_STACK_T_REVAMPED = {
             skill_name: "NestJS",
             level: "Beginner",
             icon: "/icons/nestjs.svg",
+            level_code: 1,
+        },
+        {
+            skill_name: "Gin - Go ",
+            level: "Beginner",
+            icon: "/icons/gin.svg",
             level_code: 1,
         },
     ],

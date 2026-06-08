@@ -9,13 +9,14 @@ import { EducationCard } from "../EducationCard";
 import { TechStackCardRevamped } from "../TechStack/TechStackNew";
 export const MainAbout = () => {
   return (
-    <div className="flex flex-col sm:flex-row w-full space-y-3 sm:space-y-0 md:gap-8">
+    <div className="flex flex-col sm:flex-row w-full space-y-3 px-5 md:px-2 sm:space-y-0 md:gap-8">
       <div className="flex lg:sticky lg:top-22 flex-1 flex-col space-y-2  items-center lg:h-fit">
         <div className=" w-37.5 h-37.5 border border-white/60 rounded-full overflow-hidden">
           <Image
             alt="Photo"
             src="/photo.png"
             width={150}
+            loading="eager"
             height={150}
             className=" object-cover object-top scale-85 "
           />
