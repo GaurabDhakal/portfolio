@@ -59,7 +59,7 @@ export default async function SpecificBlog({
         <div className="text-sm text-white/70 flex flex-col gap-2">
           <div className="flex items-center gap-1 leading-none">
             <p className="m-0">
-              <b>Uploaded: </b>
+              <b>Published: </b>
               {data.frontmatter.date}
             </p>
           </div>
