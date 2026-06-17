@@ -17,7 +17,7 @@ export const PLACE_LIVING = "Kathmandu, Nepal";
 export const HERO_MAIN =
     "Simple guy, who's giving his best to achieve his goals.";
 
-export const BASIC_EXPANDED_INTRO_TEXT = `Hello, I'm ${FULL_NAME}, a ${AGE}-year-old bachelors student from ${PLACE_LIVING}. I'm currently diving deep into web development 💻 while aspiring to become a skilled AI/ML engineer.`;
+export const BASIC_EXPANDED_INTRO_TEXT = `A ${AGE}-year-old bachelors student from ${PLACE_LIVING}. I'm currently diving deep into web development while aspiring to become a skilled AI/ML engineer.`;
 
 export const ABOUT = `${FIRST_NAME}, a Kathmandu-based learner, is passionately exploring various web development concepts while building his foundation in modern development practices through hands-on experience.`;
 

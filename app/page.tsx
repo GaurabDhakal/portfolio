@@ -2,7 +2,6 @@
 import { Intro } from "@/components/Intro";
 import { useDynamicTitle } from "@/hooks/useDynamicTitle";
 import { LatestBlogs } from "@/components/LatestBlogs";
-
 export default function Home() {
   useDynamicTitle();
   return (

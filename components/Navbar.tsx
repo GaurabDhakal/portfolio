@@ -62,7 +62,7 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
 
         {/* Center Navbar */}
         <div className="flex-1 flex justify-center w-full select-none ">
-          <nav className="flex items-center font-semibold w-full justify-center p-2 md:p-1.5 bg-[#15151b82] md:bg-transparent md:backdrop-blur-none border md:border-gray-400/50 text-white my-2 mx-4 md:m-5 rounded-3xl backdrop-blur-lg">
+          <nav className="flex items-center font-semibold w-full justify-center p-2 md:p-1.5 bg-[#15151b82] md:bg-transparent md:backdrop-blur-none border md:border-gray-400/50 text-white my-3.5 mx-4 md:m-5 rounded-3xl backdrop-blur-lg">
             <ul className="w-full">
               <li className="flex items-center justify-around gap-2 sm:space-x-0.75">
                 {NavbarLinks.map(({ icon, text, href, hasChildren }) => (

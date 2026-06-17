@@ -1,17 +1,18 @@
 "use client";
 
-import { HERO_MAIN, BASIC_EXPANDED_INTRO_TEXT } from "@/constants/bio";
+import { FULL_NAME, BASIC_EXPANDED_INTRO_TEXT } from "@/constants/bio";
 import { ButtonWrapper } from "./ButtonWrapper";
 
 const Intro = () => {
   return (
     <div className="w-full flex flex-col gap-5">
       <div className="space-y-5">
-        <div className="md:text-5xl flex text-3xl font-extrabold lg:max-w-220">
-          <p>{HERO_MAIN}</p>
+        <div className="md:text-6xl flex text-4xl font-extrabold  ">
+          <p className="text-gray-400">
+            Hi, I am <br className="md:hidden" /> <span className="text-white">{FULL_NAME}</span>.
+          </p>
         </div>
-        <div className="border-t-2 border-gray-500 rounded-lg my-4 max-w-205" />
-        <div className="max-w-210  text-neutral-300/75 font-medium">
+        <div className="md:max-w-210 text-neutral-300/75 font-medium md:px-0.5">
           <p>{BASIC_EXPANDED_INTRO_TEXT}</p>
         </div>
       </div>
