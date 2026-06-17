@@ -12,9 +12,11 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
       return await getAllBlogs(limit);
     },
   });
-
+  if (!data) {
+    return null;
+  }
   return (
-    <section className="flex flex-col md:flex-row gap-6 items-center justify-around w-full">
+    <section className="flex flex-col md:flex-row gap-6 items-center justify-around w-full md:shadow-sm md:shadow-gray-800 md:ring-1 md:ring-gray-500/40 p-0 md:p-4  rounded-4xl">
       <div>
         <p className="text-3xl md:text-4xl font-extrabold max-w-sm text-center">Latest Blog</p>
       </div>
