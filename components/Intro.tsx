@@ -25,7 +25,7 @@ const Intro = () => {
       <div className="flex gap-2">
         <ButtonWrapper text="About me" href="/about" />
         <ButtonWrapper text="Blog" href="/blog" />
-        <ButtonWrapper text="Work" href="/work" />
+        <ButtonWrapper text="Projects" href="/projects" />
       </div>
     </div>
   );
