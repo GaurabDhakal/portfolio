@@ -9,7 +9,7 @@ export default function Home() {
       <div>
         <Intro />
       </div>
-      <div className="w-full">
+      <div className="w-[98%]">
         <LatestBlogs limit={1} />
       </div>
     </div>

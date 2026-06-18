@@ -50,7 +50,7 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
   }, [timeZone, locale]);
 
   return (
-    <div className="flex flex-col w-full bg-[#160f194c] md:bg-transparent rounded md:backdrop-blur-md">
+    <div className="flex flex-col w-full bg-transparent rounded md:backdrop-blur-md">
       {/* Loading Bar */}
       {isPending && <div className="absolute top-0 left-0 w-full h-1 bg-blue-500 animate-pulse" />}
 
@@ -62,7 +62,7 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
 
         {/* Center Navbar */}
         <div className="flex-1 flex justify-center w-full select-none ">
-          <nav className="flex items-center font-semibold w-full justify-center p-2 md:p-1.5 bg-[#15151b82] md:bg-transparent md:backdrop-blur-none border md:border-gray-400/50 text-white my-3.5 mx-4 md:m-5 rounded-3xl backdrop-blur-lg">
+          <nav className="flex items-center font-semibold w-full justify-center p-2 md:p-1.5 bg-[#15151b82] md:bg-transparent md:backdrop-blur-none border md:border-gray-400/50 text-white my-3.5 mx-4 md:m-5 rounded-[20px]  md:rounded-3xl backdrop-blur-lg">
             <ul className="w-full">
               <li className="flex items-center justify-around gap-2 sm:space-x-0.75">
                 {NavbarLinks.map(({ icon, text, href, hasChildren }) => (
