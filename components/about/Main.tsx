@@ -65,6 +65,16 @@ export const MainAbout = () => {
         <div>
           <p className="sm:max-w-150">{ABOUT}</p>
         </div>
+
+        {/* Tech Stack Section */}
+        <div className="flex flex-col gap-1">
+          <div>
+            <span className="text-4xl font-extrabold">Tech Stack</span>
+          </div>
+          <div className="p-1 flex">
+            <TechStackCardRevamped data={TECH_STACK_N} />
+          </div>
+        </div>
         {/* Studies section  */}
         <div className="space-y-2">
           <div>
@@ -93,15 +103,6 @@ export const MainAbout = () => {
             <div className="p-1">
               <p>{EDUCATION.completeSummary}</p>
             </div>
-          </div>
-        </div>
-        {/* Tech Stack Section */}
-        <div className="flex flex-col gap-1">
-          <div>
-            <span className="text-4xl font-extrabold">Tech Stack</span>
-          </div>
-          <div className="p-1 flex">
-            <TechStackCardRevamped data={TECH_STACK_N} />
           </div>
         </div>
       </div>

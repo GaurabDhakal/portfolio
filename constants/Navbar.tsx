@@ -66,8 +66,8 @@ export const NavbarLinks = [
         </svg>
       </div>
     ),
-    href: "/work",
-    text: "Work",
+    href: "/projects",
+    text: "Projects",
     hasChildren: false,
   },
   {

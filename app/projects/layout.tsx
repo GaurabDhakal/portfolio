@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Projects",
   description: "Explore projects I made.",
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
