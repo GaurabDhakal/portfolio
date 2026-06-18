@@ -4,6 +4,7 @@ import { BlogList } from "./blogs/list";
 import { TBlogsResponse } from "@/types";
 import { getAllBlogs } from "@/lib/blogs";
 import { BlogSkeleton } from "./blogs/BlogSkeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
   const { data } = useQuery<TBlogsResponse>({
@@ -13,10 +14,16 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
     },
   });
   if (!data) {
-    return null;
+    return (
+      <div className="flex flex-col gap-1.5 items-center justify-center border h-30 rounded-4xl border-white/10 pl-4">
+        <Skeleton className="h-6 w-[95%] rounded" />
+        <Skeleton className="h-6 w-[95%] rounded" />
+        <Skeleton className="h-6 w-[95%] rounded" />
+      </div>
+    );
   }
   return (
-    <section className="flex flex-col md:flex-row gap-6 items-center justify-around w-full md:shadow-sm md:shadow-gray-800 md:ring-1 md:ring-gray-500/40 p-0 md:p-4  rounded-4xl">
+    <section className="flex flex-col md:flex-row gap-6 items-center justify-around w-full md:shadow-sm md:shadow-gray-800  md:border md:border-gray-500/40 md:ring-1 md:ring-gray-500/40 p-0 md:p-4  rounded-4xl">
       <div>
         <p className="text-3xl md:text-4xl font-extrabold max-w-sm text-center">Latest Blog</p>
       </div>
