@@ -15,7 +15,7 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
   });
   if (!data) {
     return (
-      <div className="flex flex-col gap-1.5 md:ring-1 md:ring-gray-500/40 items-center justify-center border h-38 rounded-4xl border-white/10 pl-4">
+      <div className="flex flex-col gap-1.5 md:ring-1 md:ring-gray-500/40 items-center justify-center md:border h-38 rounded-4xl md:border-white/10">
         <Skeleton className="h-6 w-[95%] rounded" />
         <Skeleton className="h-6 w-[95%] rounded" />
         <Skeleton className="h-6 w-[95%] rounded" />
