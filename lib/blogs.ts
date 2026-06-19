@@ -1,5 +1,6 @@
 // lib/blogs.ts
 "use server";
+import { cache } from "react";
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
@@ -18,16 +19,18 @@ export type BlogMeta = {
     readingTime: string;
 };
 
-export async function getAllBlogs(limit = -1): Promise<BlogMeta[]> {
+export const getAllBlogs = cache(async (limit = -1): Promise<BlogMeta[]> => {
     const files = fs.readdirSync(blogsDir);
 
     const sorted = files
         .filter((f) => {
-            let shouldReturn = f.endsWith(".mdx");
-            if (env != "dev") {
-                shouldReturn = !f.endsWith(".test.mdx");
+            if (!f.endsWith(".mdx")) return false;
+
+            if (env !== "dev" && f.endsWith(".test.mdx")) {
+                return false;
             }
-            return shouldReturn;
+
+            return true;
         })
         .map((filename) => {
             const slug = filename.replace(".mdx", "");
@@ -48,9 +51,9 @@ export async function getAllBlogs(limit = -1): Promise<BlogMeta[]> {
         );
 
     return limit === -1 ? sorted : sorted.slice(0, limit);
-}
+});
 
-export async function getBlogBySlug(slug: string) {
+export const getBlogBySlug = cache(async (slug: string) => {
     const filepath = path.join(blogsDir, `${slug}.mdx`);
 
     // return null if file doesn't exist
@@ -63,4 +66,4 @@ export async function getBlogBySlug(slug: string) {
         frontmatter: data as BlogMeta,
         content,
     };
-}
+});
