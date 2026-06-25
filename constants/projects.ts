@@ -7,7 +7,7 @@ export const projects = [
         description:
             "A simple web app that predicts the country of a person based on given name.",
         github_link: github_link,
-        tech_stack: ["HTML", "CSS", "JavaScript"],
+        tech_stack: ["HTML", "CSS", "JS"],
         demo_link:
             "https://oldprojects.gaurabdhakal.com.np/CountryPredictor.html",
     },
@@ -18,7 +18,7 @@ export const projects = [
         description:
             "A simple web app that predicts the gender of a person based on given name.",
         github_link: github_link,
-        tech_stack: ["HTML", "CSS", "JavaScript"],
+        tech_stack: ["HTML", "CSS", "JS"],
         demo_link: "https://oldprojects.gaurabdhakal.com.np/genderGuesser.html",
     },
     {
@@ -28,7 +28,7 @@ export const projects = [
         description:
             "A simple to-do list app that allows users to add, edit, and delete tasks.",
         github_link: github_link,
-        tech_stack: ["HTML", "CSS", "JavaScript"],
+        tech_stack: ["HTML", "CSS", "JS"],
         demo_link:
             "https://oldprojects.gaurabdhakal.com.np/TODOLIST/index.html",
     },
@@ -39,7 +39,7 @@ export const projects = [
         description:
             "A weather app that displays the current weather conditions for a given location.",
         github_link: github_link,
-        tech_stack: ["HTML", "CSS", "JavaScript"],
+        tech_stack: ["HTML", "CSS", "JS"],
         demo_link: "https://oldprojects.gaurabdhakal.com.np/weather.html",
     },
 ];
