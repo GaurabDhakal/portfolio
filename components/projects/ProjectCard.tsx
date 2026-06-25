@@ -25,7 +25,10 @@ export const ProjectCard = ({
   };
 
   return (
-    <div className="flex flex-col items-center rounded-3xl min-w-80 p-4 h-100 transition-all duration-300 ease-in-out bg-[#18181a] hover:bg-[#373F51]  ">
+    <div className="flex flex-col items-center rounded-4xl min-w-80 p-4 h-100 transition-all duration-300 ease-in-out bg-[#1d2121] hover:bg-[#373F51] gap-3">
+      <div>
+        <div className="text-2xl font-bold">{title}</div>
+      </div>
       <div>
         <Image
           src={imageUrl}
@@ -39,7 +42,6 @@ export const ProjectCard = ({
       </div>
       <div className="flex flex-col items-center justify-between py-3 h-full">
         <div className="flex w-full flex-col cursor-default text-center">
-          <div className="text-2xl font-bold">{title}</div>
           <div className="px-0.5 font-sm">{description}</div>
         </div>
         <div className="flex items-center gap-2">

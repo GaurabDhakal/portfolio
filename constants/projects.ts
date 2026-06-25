@@ -5,7 +5,7 @@ export const projects = [
         imageUrl: "/project-images/cp.png",
         title: "Country Predictor",
         description:
-            "A simple web app that predicts the country of a person based on their name.",
+            "A simple web app that predicts the country of a person based on given name.",
         github_link: github_link,
         tech_stack: ["HTML", "CSS", "JavaScript"],
         demo_link:
@@ -16,7 +16,7 @@ export const projects = [
         imageUrl: "/project-images/gp.png",
         title: "Gender Predictor",
         description:
-            "A simple web app that predicts the gender of a person based on their name.",
+            "A simple web app that predicts the gender of a person based on given name.",
         github_link: github_link,
         tech_stack: ["HTML", "CSS", "JavaScript"],
         demo_link: "https://oldprojects.gaurabdhakal.com.np/genderGuesser.html",
