@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 
 export const zedMono = localFont({
   src: [
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </main>
         <Footer />
       </body>
+      <Analytics />
     </html>
   );
 }
