@@ -9,5 +9,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="text-white mt-3">{children}</div>;
+  return <div className="text-white mt-4 sm:mt-1">{children}</div>;
 }

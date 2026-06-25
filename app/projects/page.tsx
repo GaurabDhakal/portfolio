@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <div className="text-white sm:max-w-190">
       <div>
-        <h1 className="p-2 text-4xl font-extrabold font-sans text-center">Projects</h1>
+        <h1 className="p-2 sm:py-1 text-4xl font-extrabold font-pp-neue-montreal text-center">Projects</h1>
         <div className="px-2 py-1">
           <p>
             I {`haven't`} worked on any large-scale projects yet, and currently focusing on simpler

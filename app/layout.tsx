@@ -28,7 +28,16 @@ export const zedMono = localFont({
 });
 
 const PP_Neue_Montreal = localFont({
-  src: "../public/fonts/PPNeueMontreal/PPNeueMontreal-Extrabold.otf",
+  src: [
+    {
+      path: "../public/fonts/PPNeueMontreal/PPNeueMontreal-Extrabold.otf",
+      weight: "900",
+    },
+    {
+      path: "../public/fonts/PPNeueMontreal/PPNeueMontreal-Regular.otf",
+      weight: "400",
+    },
+  ],
   variable: "--pp-neue-montreal",
 });
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });

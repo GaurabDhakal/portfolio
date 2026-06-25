@@ -50,20 +50,20 @@ export default async function SpecificBlog({
   if (!data) notFound();
 
   return (
-    <article className="prose prose-invert md:max-w-200 overflow-hidden flex flex-col gap-4 px-1">
-      <div className="flex flex-col gap-3">
-        <p className="font-extrabold text-3xl md:text-4xl ">{data.frontmatter.title}</p>
+    <article className="md:max-w-200 overflow-hidden flex flex-col items-center justify-center gap-4">
+      <div className="flex flex-col gap-3 px-4">
+        <p className="font-extrabold text-2xl md:text-3xl font-pp-neue-montreal antialiased">{data.frontmatter.title}</p>
         <div className="text-white/70 flex flex-col gap-2">
           <div className="flex items-center gap-1 leading-none text-sm font-mono">
             <p
-              className={`m-0 border border-gray-500/50 px-3 py-1  bg-[#132221] rounded-full 
+              className={`m-0 border border-gray-500/50 px-2.5 py-1  bg-[#132221] rounded-full 
             text-[#d7ffdd] font-sans`}
             >
               <b>Published: </b>
               {data.frontmatter.date}
             </p>
           </div>
-          <p>{data.frontmatter.description}</p>
+          <p className="text-sm">{data.frontmatter.description}</p>
           <div className="flex gap-2">
             {data.frontmatter.tags.map((tag) => {
               const randomColor = getRandomTagColor();
@@ -76,7 +76,8 @@ export default async function SpecificBlog({
           </div>
         </div>
       </div>
-      <div className="px-1">
+      <hr className="w-[90%] sm:w-[97%]"/>
+      <div className="px-4 font-sans">
         <MDXRemote
           source={data.content}
           components={mdxComponents}

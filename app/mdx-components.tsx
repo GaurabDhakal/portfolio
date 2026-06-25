@@ -3,12 +3,12 @@ import Image, { ImageProps } from "next/image";
 
 export const mdxComponents = {
   h1: ({ children }) => (
-    <h1 className="text-2xl  sm:text-3xl lg:text-4xl font-bold text-gray-50 mb-6 wrap-break-word">
+    <h1 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-pp-neue-montreal text-gray-50 mb-6 wrap-break-word">
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-50 my-4 font-sans wrap-break-word">
+    <h2 className="text-lg sm:text-xl lg:text-2xl font-bold font-pp-neue-montreal text-gray-50 my-4  wrap-break-word">
       {children}
     </h2>
   ),

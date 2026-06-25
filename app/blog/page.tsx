@@ -15,7 +15,7 @@ const Blog = () => {
     <div className="flex items-center justify-center">
       <div className="flex flex-col gap-5">
         <div className="text-white">
-          <p className="text-3xl md:text-4xl font-bold text-center">
+          <p className="text-3xl md:text-4xl font-extrabold font-pp-neue-montreal text-center">
             Writing About Web Development & AI
           </p>
         </div>
