@@ -163,13 +163,13 @@ export const TECH_STACK_N: TECH_STACK_T_REVAMPED = {
     ],
     runtimes: [
         {
-            skill_name: "Node.JS",
+            skill_name: "Node JS",
             level: "Intermediate",
             icon: "/icons/nodejs.svg",
             level_code: 2,
         },
         {
-            skill_name: "Bun",
+            skill_name: "Bun JS",
             level: "Intermediate",
             icon: "/icons/bunjs.svg",
             level_code: 2,

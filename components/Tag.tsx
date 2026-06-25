@@ -5,7 +5,7 @@ export const Tag = ({ tag_title, className }: { tag_title: string; className?: s
     <div className="text-sm font-semibold flex">
       <p
         className={cn(
-          "border border-gray-400/40 bg-[#17131c5f] text-white/80 rounded-2xl px-2 antialiased mr-1 p-1",
+          "border border-gray-400/40 bg-[#17222458] text-white/80 rounded-2xl px-3 antialiased mr-1 p-1",
           className,
         )}
       >

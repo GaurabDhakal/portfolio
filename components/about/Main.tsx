@@ -11,7 +11,7 @@ import { Earth } from "lucide-react";
 
 export const MainAbout = () => {
   return (
-    <div className="flex flex-col sm:flex-row w-full space-y-3 px-5 md:px-2 sm:space-y-0 md:gap-8">
+    <div className="flex flex-col sm:flex-row w-full space-y-3 px-2 sm:space-y-0 md:gap-8">
       <div className="flex lg:sticky lg:top-22 flex-1 flex-col space-y-2  items-center lg:h-fit">
         <div className=" w-37.5 h-37.5 border border-white/60 rounded-full overflow-hidden">
           <Image
@@ -27,7 +27,7 @@ export const MainAbout = () => {
           <div>
             <Earth className="h-5 w-5 text-green-200"/>
           </div>
-          <span>Kathmandu, Nepal</span>
+          <p className="font-medium">Kathmandu, Nepal</p>
         </div>
         <div className="flex gap-1">
           <Tag tag_title="English" className="px-2" />
@@ -56,18 +56,18 @@ export const MainAbout = () => {
         {/* Tech Stack Section */}
         <div className="flex flex-col gap-1">
           <div>
-            <span className="text-4xl font-extrabold">Tech Stack</span>
+            <span className="text-3xl font-extrabold font-pp-neue-montreal text-[#E8DDB5]">Tech Stack</span>
           </div>
-          <div className="p-1 flex">
+          <div className="px-0.5 flex">
             <TechStackCardRevamped data={TECH_STACK_N} />
           </div>
         </div>
         {/* Studies section  */}
-        <div className="space-y-2">
+        <div className="space-y-2 mt-2">
           <div>
-            <span className="text-[40px] font-extrabold">Studies</span>
+            <span className="text-3xl font-extrabold text-[#E8DDB5]">Educational History</span>
           </div>
-          <div className="space-y-10 p-1">
+          <div className="space-y-10 px-0.5">
             {EDUCATION.history.map(
               ({ gradeRange, yearsAttended, summary, location, institute }, key) => {
                 return (
@@ -85,9 +85,9 @@ export const MainAbout = () => {
           </div>
           <div className="max-w-150 space-y-1 my-5">
             <div>
-              <p className="text-2xl font-bold">Summary</p>
+              <p className="text-3xl font-extrabold text-[#E8DDB5]">Summary</p>
             </div>
-            <div className="p-1">
+            <div className="p-0.5">
               <p>{EDUCATION.completeSummary}</p>
             </div>
           </div>

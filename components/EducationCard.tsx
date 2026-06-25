@@ -14,9 +14,9 @@ export const EducationCard = ({
   return (
     <div className="text-white w-full">
       <div className="flex items-center justify-between space-y-2">
-        <div className="flex-3 sm:flex-1">
+        <div>
           <div className="flex flex-col">
-            <span className="text-xl font-bold">
+            <span className="text-xl font-bold text-white/90">
               <p>{institute_name}</p>
             </span>
             <span className="text-sm flex gap-2 text-[#e1fe92]">

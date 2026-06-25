@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Skills = ({ skills }: { skills: TSkill[] }) => {
   return (
-    <div className="flex gap-10 ">
+    <div className="flex gap-8">
       {skills.map((skill) => (
         <div
           key={skill.skill_name}
@@ -15,8 +15,8 @@ export const Skills = ({ skills }: { skills: TSkill[] }) => {
             <Image
               src={skill.icon}
               alt={skill.icon}
-              height={50}
-              width={50}
+              height={45}
+              width={45}
               className="stroke-white aspect-square"
               loading="eager"
             ></Image>

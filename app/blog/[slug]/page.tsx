@@ -57,7 +57,7 @@ export default async function SpecificBlog({
           <div className="flex items-center gap-1 leading-none text-sm font-mono">
             <p
               className={`m-0 border border-gray-500/50 px-2.5 py-1  bg-[#132221] rounded-full 
-            text-[#d7ffdd] font-sans`}
+            text-[#d7ffdd] `}
             >
               <b>Published: </b>
               {data.frontmatter.date}
@@ -77,7 +77,7 @@ export default async function SpecificBlog({
         </div>
       </div>
       <hr className="w-[90%] sm:w-[97%]"/>
-      <div className="px-4 font-sans">
+      <div className="px-4 ">
         <MDXRemote
           source={data.content}
           components={mdxComponents}
