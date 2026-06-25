@@ -58,6 +58,7 @@ export const getBlogBySlug = cache(async (slug: string) => {
 
     // return null if file doesn't exist
     if (!fs.existsSync(filepath)) return null;
+    if (filepath.endsWith(".test.mdx")) return null;
 
     const raw = fs.readFileSync(filepath, "utf-8");
     const { data, content } = matter(raw);
