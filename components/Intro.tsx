@@ -15,13 +15,18 @@ const Intro = () => {
       linesClass: "line++",
     });
 
-    gsap.from(fullNameSplit.chars, {
-      scrollTrigger: ".intro-element",
+    gsap.set(fullNameSplit.chars, {
+      autoAlpha: 0,
       y: -10,
-      opacity: 0,
+    });
+
+    gsap.to(fullNameSplit.chars, {
+      autoAlpha: 1,
+      y: 0,
       stagger: 0.04,
       duration: 0.3,
       ease: "sine.out",
+      scrollTrigger: ".intro-element",
     });
   }, []);
   return (
