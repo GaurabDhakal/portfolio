@@ -1,6 +1,6 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import { BlogList } from "./blogs/list";
+import { BlogList } from "./blogs/BlogList";
 import { TBlogsResponse } from "@/types";
 import { getAllBlogs } from "@/lib/blogs";
 import { BlogSkeleton } from "./blogs/BlogSkeleton";
@@ -26,9 +26,9 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
     );
   }
   return (
-    <section className="flex flex-col md:flex-row gap-6 items-center justify-around w-full md:shadow-sm  md:ring-1 md:ring-gray-500/40 p-0 md:p-4  rounded-4xl">
+    <section className="flex flex-col md:flex-row gap-6 items-center justify-around w-full md:ring md:ring-gray-500/60 p-0 md:p-4 rounded-3xl">
       <div>
-        <p className="text-3xl md:text-4xl font-extrabold max-w-sm text-center">Latest Blog</p>
+        <p className="text-3xl sm:text-4xl font-extrabold max-w-sm ">Latest Blog</p>
       </div>
       <div className="flex flex-col gap-4 w-full md:w-fit">
         {data

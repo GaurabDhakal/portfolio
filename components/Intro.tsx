@@ -27,7 +27,7 @@ const Intro = () => {
   return (
     <div className=" flex flex-col intro-element gap-5  ">
       <div className="space-y-5 ">
-        <div className="md:text-6xl flex text-4xl font-extrabold">
+        <div className="sm:text-6xl flex text-4xl font-extrabold">
           <p className="text-gray-300/90 ">
             Hi, I am <br className="md:hidden" />
             <span className={`font-pp-neue-montreal text-white full-name-element`}>

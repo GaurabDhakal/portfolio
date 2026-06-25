@@ -2,7 +2,7 @@
 import { useDynamicTitle } from "@/hooks/useDynamicTitle";
 import { getAllBlogs } from "@/lib/blogs";
 import { useQuery } from "@tanstack/react-query";
-import { BlogList } from "@/components/blogs/list";
+import { BlogList } from "@/components/blogs/BlogList";
 import { BlogSkeleton } from "@/components/blogs/BlogSkeleton";
 
 const Blog = () => {

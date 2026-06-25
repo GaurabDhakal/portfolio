@@ -18,7 +18,7 @@ export const BlogList = (props: TBlogList) => {
     >
       <p
         className="font-semibold text-white/90 transition-colors duration-200 
-                   group-hover:text-[#97ffc1] text-inh"
+                   group-hover:text-[#97ffc1]"
       >
         {title}
       </p>
