@@ -61,14 +61,14 @@ export const ProjectCard = ({
             variant={"outline"}
             onClick={handleDemoClick}
           >
-            <ExternalLink className="h-[1em] w-[1em] cursor-pointer" /> <p>View Live</p>
+            <ExternalLink /> <p>Live Demo</p>
           </Button>
           <Button
             className="flex items-center justify-center cursor-pointer w-full gap-2"
             onClick={handleGithubClick}
             variant={"link"}
           >
-            <FaGithub className="h-[1em] w-[1em] cursor-pointer" onClick={handleGithubClick} />
+            <FaGithub onClick={handleGithubClick} />
             <p>Source Code</p>
           </Button>
         </div>
