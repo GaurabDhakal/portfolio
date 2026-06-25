@@ -1,6 +1,6 @@
-import React from "react";
 import Image from "next/image";
-import { FaGithub, FaExternalLinkSquareAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { ExternalLink } from "lucide-react";
 
 export const ProjectCard = ({
   imageUrl,
@@ -25,7 +25,7 @@ export const ProjectCard = ({
   };
 
   return (
-    <div className="max-w-30 flex flex-col items-center rounded-2xl min-w-80 p-3 h-100 transition-all duration-300 ease-in-out bg-[#18181a] hover:bg-[#373F51]  ">
+    <div className="flex flex-col items-center rounded-3xl min-w-80 p-4 h-100 transition-all duration-300 ease-in-out bg-[#18181a] hover:bg-[#373F51]  ">
       <div>
         <Image
           src={imageUrl}
@@ -33,17 +33,18 @@ export const ProjectCard = ({
           width={400}
           onClick={handleDemoClick}
           height={400}
-          className="h-50 object-cover cursor-pointer rounded-md"
-        ></Image>
+          className="h-50 object-cover cursor-pointer rounded-4xl overflow-hidden"
+          loading="eager"
+        />
       </div>
-      <div className="flex flex-col items-center justify-between p-2 h-full">
-        <div className="flex w-full flex-col cursor-default">
+      <div className="flex flex-col items-center justify-between py-3 h-full">
+        <div className="flex w-full flex-col cursor-default text-center">
           <div className="text-2xl font-bold">{title}</div>
-          <div className="p-1">{description}</div>
+          <div className="px-0.5 font-sm">{description}</div>
         </div>
-        <div className="flex items-center gap-4 ">
+        <div className="flex items-center gap-2">
           <FaGithub className="h-5 w-5 cursor-pointer" onClick={handleGithubClick} />
-          <FaExternalLinkSquareAlt onClick={handleDemoClick} className="h-5 cursor-pointer w-5" />
+          <ExternalLink onClick={handleDemoClick} className="h-5 w-5 cursor-pointer" />
         </div>
       </div>
     </div>

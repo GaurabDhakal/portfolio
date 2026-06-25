@@ -50,7 +50,7 @@ export const MainAbout = () => {
       </div>
       <div className="flex-2 space-y-4">
         <div className="flex flex-col items-center sm:items-start">
-          <p className="text-3xl sm:text-6xl font-black">{FULL_NAME}</p>
+          <p className="text-3xl sm:text-6xl font-black font-pp-neue-montreal">{FULL_NAME}</p>
           <p className="text-2xl sm:text-3xl text-[#949595]">Student</p>
         </div>
         <div className="flex space-x-2 space-y-2 sm:space-y-0 items-center flex-wrap">

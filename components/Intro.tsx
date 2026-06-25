@@ -3,13 +3,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { FULL_NAME, BASIC_EXPANDED_INTRO_TEXT } from "@/constants/bio";
 import { ButtonWrapper } from "./ButtonWrapper";
-import localFont from "next/font/local";
 import { ScrollTrigger, SplitText } from "gsap/all";
-gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
-const PP_Neue_Montreal = localFont({
-  src: "../public/fonts/PPNeueMontreal/PPNeueMontreal-Extrabold.otf",
-});
+gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
 const Intro = () => {
   useGSAP(() => {
@@ -33,14 +29,14 @@ const Intro = () => {
       <div className="space-y-5 ">
         <div className="md:text-6xl flex text-4xl font-extrabold">
           <p className="text-gray-300/90 ">
-            Hi, I am <br className="md:hidden" />{" "}
-            <span className={`${PP_Neue_Montreal.className} text-white full-name-element`}>
+            Hi, I am <br className="md:hidden" />
+            <span className={`font-pp-neue-montreal text-white full-name-element`}>
               {FULL_NAME}.
             </span>
           </p>
         </div>
-        <div className="md:max-w-210 text-neutral-300/75 font-medium md:px-0.5">
-          <p>{BASIC_EXPANDED_INTRO_TEXT}</p>
+        <div className="md:max-w-210 text-neutral-300/75 intro-expanded-text font-medium md:px-0.5 overflow-hidden">
+          <p className="overflow-hidden">{BASIC_EXPANDED_INTRO_TEXT}</p>
         </div>
       </div>
       <div className="flex gap-2">

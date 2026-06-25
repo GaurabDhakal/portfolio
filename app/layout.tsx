@@ -25,6 +25,10 @@ export const zedMono = localFont({
   variable: "--font-zed-mono",
 });
 
+const PP_Neue_Montreal = localFont({
+  src: "../public/fonts/PPNeueMontreal/PPNeueMontreal-Extrabold.otf",
+  variable: "--pp-neue-montreal",
+});
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const interSans = Inter({
@@ -75,7 +79,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={cn("font-sans dark", geist.variable)}>
       <body
-        className={`${interSans.className} ${zedMono.variable} antialiased h-screen flex flex-col bg-[#191b1e] selection:bg-[#e0e0e0] selection:text-[#3f3f3f] `}
+        className={`${interSans.className} ${PP_Neue_Montreal.variable} ${zedMono.variable} antialiased h-screen flex flex-col bg-[#191b1e] selection:bg-[#e0e0e0] selection:text-[#3f3f3f] `}
       >
         <div className="fixed top-0 bottom-auto w-full z-50 ">
           <Navbar />
