@@ -7,13 +7,21 @@ export const mdxComponents = {
       {children}
     </h1>
   ),
+  h2: ({ children }) => (
+    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-50 my-4 font-sans wrap-break-word">
+      {children}
+    </h2>
+  ),
+  ul: ({ children }) => (
+    <ul className=" text-gray-50 flex flex-col *:p-1 my-2 font-sans wrap-break-word">{children}</ul>
+  ),
 
   pre: ({ children }) => (
     <pre className="bg-zinc-900 text-zinc-100 p-4 rounded-xl overflow-x-auto max-w-[calc(100vw-2rem)] border border-zinc-800 shadow-lg text-sm sm:text-base my-3">
       {children}
     </pre>
   ),
-
+  code: ({ children }) => <code className="font-zed-mono text-lg">{children}</code>,
   img: (props) => (
     <Image
       sizes="100vw"

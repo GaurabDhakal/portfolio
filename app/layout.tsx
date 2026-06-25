@@ -5,6 +5,25 @@ import { Providers } from "./providers";
 import { Footer } from "@/components/Footer";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
+import localFont from "next/font/local";
+
+export const zedMono = localFont({
+  src: [
+    {
+      path: "../public/fonts/zed-mono/ZedMonoNerdFont-Regular.ttf",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/zed-mono/ZedMonoNerdFont-Medium.ttf",
+      weight: "500",
+    },
+    {
+      path: "../public/fonts/zed-mono/ZedMonoNerdFont-Bold.ttf",
+      weight: "700",
+    },
+  ],
+  variable: "--font-zed-mono",
+});
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -56,7 +75,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={cn("font-sans dark", geist.variable)}>
       <body
-        className={`${interSans.className} antialiased h-screen flex flex-col bg-[#191b1e] selection:bg-[#e0e0e0] selection:text-[#3f3f3f] `}
+        className={`${interSans.className} ${zedMono.variable} antialiased h-screen flex flex-col bg-[#191b1e] selection:bg-[#e0e0e0] selection:text-[#3f3f3f] `}
       >
         <div className="fixed top-0 bottom-auto w-full z-50 ">
           <Navbar />

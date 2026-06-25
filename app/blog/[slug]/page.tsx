@@ -30,21 +30,18 @@ export const tagColors = [
   "bg-blue-900/40 text-blue-200 border border-blue-800",
   "bg-sky-900/40 text-sky-200 border border-sky-800",
   "bg-indigo-900/40 text-indigo-200 border border-indigo-800",
-
-  "bg-green-900/40 text-green-200 border border-green-800",
-  "bg-emerald-900/40 text-emerald-200 border border-emerald-800",
-
-  "bg-yellow-900/40 text-yellow-200 border border-yellow-800",
-  "bg-amber-900/40 text-amber-200 border border-amber-800",
-
-  "bg-purple-900/40 text-purple-200 border border-purple-800",
-  "bg-fuchsia-900/40 text-fuchsia-200 border border-fuchsia-800",
-
-  "bg-rose-900/40 text-rose-200 border border-rose-800",
 ];
-export function getRandomTagColor() {
-  return tagColors[Math.floor(Math.random() * tagColors.length)];
+let available = [...tagColors];
+
+function getRandomTagColor() {
+  if (available.length === 0) {
+    available = [...tagColors];
+  }
+
+  const index = Math.floor(Math.random() * available.length);
+  return available.splice(index, 1)[0];
 }
+
 export default async function SpecificBlog({
   params,
 }: Readonly<{ params: Promise<{ slug: string }> }>) {
@@ -56,9 +53,12 @@ export default async function SpecificBlog({
     <article className="prose prose-invert md:max-w-200 overflow-hidden flex flex-col gap-4 px-1">
       <div className="flex flex-col gap-3">
         <p className="font-extrabold text-3xl md:text-4xl ">{data.frontmatter.title}</p>
-        <div className="text-sm text-white/70 flex flex-col gap-2">
-          <div className="flex items-center gap-1 leading-none">
-            <p className="m-0">
+        <div className="text-white/70 flex flex-col gap-2">
+          <div className="flex items-center gap-1 leading-none text-sm font-mono">
+            <p
+              className={`m-0 border border-gray-500/50 px-3 py-1  bg-[#132221] rounded-full 
+            text-[#d7ffdd] font-sans`}
+            >
               <b>Published: </b>
               {data.frontmatter.date}
             </p>
