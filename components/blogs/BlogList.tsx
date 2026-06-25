@@ -14,7 +14,7 @@ export const BlogList = (props: TBlogList) => {
       href={`/blog/${slug}`}
       aria-label={title}
       className={`group flex flex-col gap-1.5 md:border-l-2 md:border-white/10 md:pl-4 
-                 transition-all duration-200 hover:border-[#97ffc1] ${orientation == "compact" ? "max-w-100" : ""}`}
+                 transition-all duration-200 hover:border-[#97ffc1] ${orientation == "compact" ? "md:max-w-100" : ""}`}
     >
       <p
         className="font-semibold text-white/90 transition-colors duration-200 

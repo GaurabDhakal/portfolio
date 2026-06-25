@@ -13,7 +13,7 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
   const path = usePathname();
   const [timeZone, setTimeZone] = useState<string>("");
   const [time, setTime] = useState<string>("");
-  const [isPending, startTransition] = useTransition(); // 👈 Track route changes
+  const [isPending, startTransition] = useTransition(); 
 
   const handleClick = (href: string) => {
     startTransition(() => {
@@ -56,7 +56,7 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
 
       <div className="flex items-center justify-between w-full ">
         {/* Left Side */}
-        <div className="flex-1 text-white hidden md:block text-center font-semibold">
+        <div className="flex-1 text-white hidden lg:block text-center font-semibold">
           {timeZone}
         </div>
 
@@ -76,9 +76,9 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
                     className={`
                       ${
                         (path === href || (path.startsWith(href) && hasChildren)) &&
-                        "sm:bg-[#3e3e3e]  sm:border-gray-500/50 sm:text-white text-[#627a73]"
+                        "md:bg-[#3e3e3e]  md:border-gray-500/50 md:text-white text-[#627a73]"
                       }
-                       flex flex-col md:flex-row items-center justify-center md:gap-2 rounded-3xl border border-transparent active:text-white/50 p-0 sm:px-8 py-0 sm:py-1.5 transition-all duration-500 sm:hover:border-gray-500/50 sm:hover:bg-[#3e3e3e]`}
+                       flex flex-col md:flex-row items-center justify-center md:gap-2 rounded-3xl border border-transparent active:text-white/50 p-0 sm:px-8 py-0 md:py-1.5 transition-all duration-500 md:hover:border-gray-500/50 md:hover:bg-[#3e3e3e]`}
                   >
                     <span>{icon}</span>
                     <span className="text-xs sm:inline md:text-[15px]">{text}</span>
@@ -90,7 +90,7 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
         </div>
 
         {/* Right Side */}
-        <div className="flex-1 text-white hidden md:block text-center font-semibold">
+        <div className="flex-1 text-white hidden lg:block text-center font-semibold">
           <p>{time}</p>
         </div>
       </div>
