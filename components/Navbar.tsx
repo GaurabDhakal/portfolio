@@ -2,7 +2,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { NavbarLinks } from "@/constants/Navbar";
 
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 
 type TimeDisplayProps = {
   locale?: string;
@@ -13,12 +13,9 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
   const path = usePathname();
   const [timeZone, setTimeZone] = useState<string>("");
   const [time, setTime] = useState<string>("");
-  const [isPending, startTransition] = useTransition(); 
 
   const handleClick = (href: string) => {
-    startTransition(() => {
-      router.push(href);
-    });
+    router.push(href);
   };
 
   useEffect(() => {
@@ -52,7 +49,6 @@ const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
   return (
     <div className="flex flex-col w-full bg-transparent rounded md:backdrop-blur-md">
       {/* Loading Bar */}
-      {isPending && <div className="absolute top-0 left-0 w-full h-1 bg-blue-500 animate-pulse" />}
 
       <div className="flex items-center justify-between w-full ">
         {/* Left Side */}

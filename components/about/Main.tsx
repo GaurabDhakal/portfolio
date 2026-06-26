@@ -40,7 +40,7 @@ export const MainAbout = () => {
           <p className="text-3xl sm:text-6xl font-black font-pp-neue-montreal">{FULL_NAME}</p>
           <p className="text-2xl sm:text-3xl text-[#949595]">Student</p>
         </div>
-        <div className="flex space-x-2 space-y-2 sm:space-y-0 items-center flex-wrap">
+        <div className="flex gap-3 justify-center sm:justify-start sm:space-y-0  items-center flex-wrap">
           {FooterIcons.map(({ svg, link, name }, index) => (
             <TagWithIcons key={index + name}>
               <a href={link} className="flex" target="_blank" aria-label={name}>
