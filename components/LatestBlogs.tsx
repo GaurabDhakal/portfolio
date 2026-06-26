@@ -15,9 +15,9 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
   });
   if (!data) {
     return (
-      <div className="flex items-center flex-col md:flex-row h-37.5 md:gap-10">
-        <div className="flex w-[50%] flex-col gap-1.5 items-center justify-center  ">
-          <Skeleton className="h-8 w-full md:w-[50%] rounded-xl" />
+      <div className="flex items-center flex-col md:flex-row h-37.5 md:gap-6">
+        <div className="md:w-[45%] w-full flex md:items-center md:justify-center  ">
+          <Skeleton className="h-8 w-[50%] rounded-xl" />
         </div>
         <div className="h-full flex items-center w-full md:w-[60%]">
           <BlogSkeleton />
