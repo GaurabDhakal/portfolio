@@ -13,7 +13,7 @@ export default function Home() {
       <div className="w-full px-0.5">
         <LatestBlogs limit={1} />
       </div>
-      <div>
+      <div className="px-0.5">
         <RecentProjects limit={2} />
       </div>
     </div>
