@@ -33,7 +33,7 @@ const Intro = () => {
     <div className=" flex flex-col intro-element gap-5  ">
       <div className="space-y-5 ">
         <div className="sm:text-6xl flex text-4xl font-extrabold">
-          <p className="text-gray-300/90 ">
+          <p className=" bg-linear-to-r from-gray-400 to-[#FEFCFF] bg-clip-text text-transparent">
             Hi, I am <br className="md:hidden" />
             <span className={`font-pp-neue-montreal text-white full-name-element`}>
               {FULL_NAME}.

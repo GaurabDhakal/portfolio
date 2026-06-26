@@ -29,7 +29,7 @@ export const ProjectCard = ({
   };
 
   return (
-    <div className="flex flex-col items-center rounded-4xl min-w-80 p-4 transition-all duration-300 ease-in-out bg-[#1d2121] hover:bg-[#1a1f1f] gap-3 border border-gray-600/40 my-2">
+    <div className="flex flex-col items-center rounded-4xl p-4 transition-all duration-300 ease-in-out bg-[#1d2121] hover:bg-[#1a1f1f] gap-3 border border-gray-600/40 my-2">
       <div>
         <div className="text-2xl font-bold">{title}</div>
       </div>

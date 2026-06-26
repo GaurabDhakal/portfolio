@@ -27,8 +27,8 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
   }
   return (
     <section className="flex flex-col md:flex-row gap-6 items-center justify-around w-full md:ring md:ring-gray-500/60 p-0 md:p-4 rounded-3xl">
-      <div>
-        <p className="text-3xl sm:text-4xl font-extrabold max-w-sm ">Latest Blog</p>
+      <div className="w-[45%] flex items-center justify-center">
+        <p className="text-2xl sm:text-3xl font-extrabold ">Latest Blog</p>
       </div>
       <div className="flex flex-col gap-4 w-full md:w-fit">
         {data
