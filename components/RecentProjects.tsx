@@ -12,7 +12,7 @@ export const RecentProjects = ({ limit = -1 }: { limit?: number }) => {
   const displayedProjects = limit === -1 ? projects : projects.slice(0, limit);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-4 md:gap-6">
       <div>
         <h1 className="text-2xl sm:text-3xl font-extrabold">Explore Recent Projects</h1>
       </div>
