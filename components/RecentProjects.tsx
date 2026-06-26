@@ -17,7 +17,7 @@ export const RecentProjects = ({ limit = -1 }: { limit?: number }) => {
         <h1 className="text-2xl sm:text-3xl font-extrabold">Explore Recent Projects</h1>
       </div>
       <div>
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-2 md:gap-5">
           {displayedProjects.map(
             ({ demo_link, github_link, tech_stack, title, description, imageUrl, id }, index) => {
               const axisDirection = index % 2 === 0 ? -1 : 1;
@@ -41,7 +41,7 @@ export const RecentProjects = ({ limit = -1 }: { limit?: number }) => {
         </div>
         <div className="w-full flex justify-end">
           <Button
-            className=" cursor-pointer w-full md:w-fit flex items-center text-sm justify-center"
+            className=" cursor-pointer w-full md:w-fit flex items-center text-sm justify-center rounded-2xl"
             variant={"outline"}
             onClick={gotoProjects}
             type="button"
