@@ -70,7 +70,7 @@ export const MainAbout = () => {
         {/* Studies section  */}
         <div className="space-y-2 mt-2">
           <div>
-            <span className="text-3xl font-extrabold text-[#E8DDB5]">Educational History</span>
+            <span className="text-3xl font-extrabold text-[#E8DDB5]">Educational Journey</span>
           </div>
           <div className="space-y-10 px-0.5">
             {EDUCATION.history.map(
@@ -90,7 +90,7 @@ export const MainAbout = () => {
           </div>
           <div className="max-w-150 space-y-1 my-5">
             <div>
-              <p className="text-3xl font-extrabold text-[#E8DDB5]">Summary</p>
+              <p className="text-xl font-extrabold ">Summary</p>
             </div>
             <div className="p-0.5">
               <p>{EDUCATION.completeSummary}</p>
