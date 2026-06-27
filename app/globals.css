@@ -19,7 +19,9 @@
         "Liberation Mono", "Courier New", monospace;
     /* ... */
 }
-
+.home-page-blog-title, .animated-text {
+    will-change: transform, opacity, filter;
+}
 @theme inline {
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);

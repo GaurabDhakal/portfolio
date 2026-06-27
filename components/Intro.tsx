@@ -17,6 +17,7 @@ const Intro = () => {
 
     gsap.set(fullNameSplit.chars, {
       autoAlpha: 0,
+      willChange: "transform, opacity",
       y: -10,
     });
 
@@ -35,7 +36,7 @@ const Intro = () => {
         <div className="sm:text-6xl flex text-4xl font-extrabold">
           <p className=" bg-linear-to-r from-gray-400 to-[#FEFCFF] bg-clip-text text-transparent">
             Hi, I am <br className="md:hidden" />
-            <span className={`font-pp-neue-montreal text-white full-name-element`}>
+            <span className={`font-pp-neue-montreal text-white full-name-element animated-text`}>
               {FULL_NAME}.
             </span>
           </p>

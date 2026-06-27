@@ -26,9 +26,9 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
     );
   }
   return (
-    <section className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-around w-full md:ring md:ring-gray-600/50 p-0 md:px-4 py-3 rounded-3xl">
-      <div className="md:w-[45%] w-full flex md:items-center md:justify-center">
-        <p className="text-2xl sm:text-3xl font-extrabold ">Latest Blog</p>
+    <section className="flex flex-col gap-3 md:gap-4 w-full">
+      <div className="md:w-[45%] w-full flex ">
+        <p className="text-2xl sm:text-3xl font-extrabold ">Latest Blog </p>
       </div>
       <div className="flex flex-col gap-4 w-full md:w-fit">
         {data
@@ -41,7 +41,6 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
                   title={title}
                   description={description}
                   date={date}
-                  orientation="compact"
                 />
               );
             })

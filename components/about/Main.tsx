@@ -20,7 +20,7 @@ export const MainAbout = () => {
             width={150}
             loading="eager"
             height={150}
-            className=" object-cover object-top scale-85 "
+            className=" object-cover object-top scale-100"
           />
         </div>
         <div className="flex items-center space-x-2">
