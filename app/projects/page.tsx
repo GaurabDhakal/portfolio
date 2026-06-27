@@ -18,13 +18,9 @@ const Projects = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center">
         {projects.map(
-          ({ demo_link, github_link, tech_stack, title, description, imageUrl, id }, index) => {
-            const axisDirection = index % 2 === 0 ? -1 : 1;
+          ({ demo_link, github_link, tech_stack, title, description, imageUrl, id }) => {
             return (
               <ProjectCard
-                animationOptions={{
-                  axis_direction: axisDirection,
-                }}
                 key={id}
                 tech_stack={tech_stack}
                 demo_link={demo_link}
