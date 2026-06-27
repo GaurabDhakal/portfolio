@@ -10,28 +10,31 @@ type TBlogList = {
   title: string;
   description: string;
   date: string;
+  animate?: boolean;
   orientation?: "compact" | "free";
 };
 export const BlogList = (props: TBlogList) => {
-  const { slug, title, description, date, orientation } = props;
+  const { slug, title, description, date, orientation, animate } = props;
   const titleRef = useRef(null);
   useGSAP(() => {
-    const titleChars = SplitText.create(titleRef.current, {
-      type: "words, chars",
-      mask: "words",
-    });
-    gsap.from(titleChars.chars, {
-      opacity: 0,
-      filter: "blur(10px)",
-      y: 35,
-      scale: 0.95,
-      stagger: {
-        each: 0.0058,
-      },
-      duration: 0.9,
-      ease: "expo.out",
-    });
-  }, [titleRef.current]);
+    if (animate) {
+      const titleChars = SplitText.create(titleRef.current, {
+        type: "words, chars",
+        mask: "words",
+      });
+      gsap.from(titleChars.chars, {
+        opacity: 0,
+        filter: "blur(10px)",
+        y: 35,
+        scale: 0.95,
+        stagger: {
+          each: 0.0058,
+        },
+        duration: 0.9,
+        ease: "expo.out",
+      });
+    }
+  }, [titleRef.current, animate]);
   return (
     <Link
       href={`/blog/${slug}`}

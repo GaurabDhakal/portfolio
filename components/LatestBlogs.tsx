@@ -41,6 +41,7 @@ export const LatestBlogs = ({ limit = 3 }: { limit?: number }) => {
                   title={title}
                   description={description}
                   date={date}
+                  animate={true}
                 />
               );
             })

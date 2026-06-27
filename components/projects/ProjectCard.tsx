@@ -19,9 +19,10 @@ export const ProjectCard = ({
   github_link: string;
   demo_link: string;
   tech_stack: string[];
-  animationOptions?: { axis_direction: number };
+  animationOptions?: { gsap_animations: boolean };
 }) => {
   const handleGithubClick = () => {
+    console.log(animationOptions);
     window.open(github_link, "_blank");
   };
   const handleDemoClick = () => {
