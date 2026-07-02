@@ -31,10 +31,10 @@ const Intro = () => {
     <div className=" flex flex-col intro-element gap-5">
       <div className="space-y-5 ">
         <div className="sm:text-6xl flex text-4xl font-extrabold">
-          <p className=" bg-linear-to-r from-gray-400 to-[#FEFCFF] bg-clip-text text-transparent">
+          <p className="text-white">
             Hi, I am <br className="md:hidden" />
             <em
-              className={`font-pp-neue-montreal not-italic text-white full-name-element animated-text relative inline-block`}
+              className={`font-pp-neue-montreal not-italic full-name-element animated-text relative inline-block `}
             >
               {FULL_NAME}.
               <HandwrittenUnderline />
@@ -42,10 +42,12 @@ const Intro = () => {
           </p>
         </div>
         <div className="md:max-w-210 text-neutral-300/75 intro-expanded-text font-medium md:px-0.5 overflow-hidden">
-          <p className="overflow-hidden">{BASIC_EXPANDED_INTRO_TEXT}</p>
+          <p className="overflow-hidden text-white bg-gray-700/20 backdrop-blur-md rounded-2xl px-2">
+            {BASIC_EXPANDED_INTRO_TEXT}
+          </p>
         </div>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 ">
         <ButtonWrapper text="About me" href="/about" />
         <ButtonWrapper text="Blog" href="/blog" />
         <ButtonWrapper text="Projects" href="/projects" />

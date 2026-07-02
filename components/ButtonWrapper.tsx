@@ -5,8 +5,8 @@ export const ButtonWrapper = ({ href, text }: { href: string; text: string }) =>
   return (
     <Link href={href} aria-label={text}>
       <Button
-        className="cursor-pointer p-3 rounded-xl border border-gray-500/30 bg-[#27323859] hover:bg-[#1c222559]  font-heading text-[#f1f8f0] text-md"
-        variant={"secondary"}
+        className="cursor-pointer p-3 rounded-xl border font-heading text-md"
+        variant="outline"
         asChild
       >
         <span>
