@@ -7,10 +7,9 @@ export const NavbarLinks = [
           fill="currentColor"
           strokeWidth="0"
           viewBox="0 0 256 256"
-          height="1em"
-          width="1em"
+          height="1.3em"
+          width="1.3em"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
         >
           <path
             d="M216,120v96H152V152H104v64H40V120a8,8,0,0,1,2.34-5.66l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,216,120Z"
@@ -31,9 +30,11 @@ export const NavbarLinks = [
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
+          height="1.3em"
+          width="1.3em"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="h-6 w-6" // Ensuring the height and width are equal
+          // Ensuring the height and width are equal
         >
           <path
             strokeLinecap="round"
@@ -54,8 +55,10 @@ export const NavbarLinks = [
           stroke="currentColor"
           fill="currentColor"
           strokeWidth="0"
+          height="1.3em"
+          width="1.3em"
           viewBox="0 0 256 256"
-          className="h-6 w-6" // Ensuring the height and width are equal
+          // Ensuring the height and width are equal
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -77,8 +80,9 @@ export const NavbarLinks = [
           stroke="currentColor"
           fill="currentColor"
           strokeWidth="0"
+          height="1.3em"
+          width="1.3em"
           viewBox="0 0 256 256"
-          className="h-6 w-6" // Ensuring the height and width are equal
           xmlns="http://www.w3.org/2000/svg"
         >
           <path

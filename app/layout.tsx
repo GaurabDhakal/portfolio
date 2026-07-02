@@ -1,4 +1,4 @@
-import {  Geist } from "next/font/google";
+import { Geist, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "./providers";
@@ -9,6 +9,10 @@ import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+const s_grotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+});
 export const zedMono = localFont({
   src: [
     {
@@ -64,6 +68,12 @@ export const metadata: Metadata = {
     "portfolio website developer Nepal",
   ],
   creator: "Gaurab Dhakal",
+  icons: [
+    {
+      url: "/favicon.png",
+      type: "image/png",
+    },
+  ],
 
   title: {
     default: "Gaurab Dhakal",
@@ -84,12 +94,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={cn("font-sans dark", geist.variable)}>
       <body
-        className={`${geist.className} ${PP_Neue_Montreal.variable} ${zedMono.variable} antialiased h-screen flex flex-col bg-[#1c1e20] selection:bg-[#e0e0e0] selection:text-[#3f3f3f] `}
+        className={`${geist.className} ${PP_Neue_Montreal.variable} ${zedMono.variable} ${s_grotesk.variable} antialiased h-screen flex flex-col bg-[#1c1e20] selection:bg-[#e0e0e0] selection:text-[#3f3f3f] `}
       >
         <div className="fixed top-0 bottom-auto w-full z-50 ">
           <Navbar />
         </div>
-        <main className="py-4 px-3 flex grow items-center flex-col mt-16 md:mt-22">
+        <main className="py-4 px-1 flex grow items-center flex-col mt-16 lg:mt-20 lg:">
           <Providers>{children}</Providers>
         </main>
         <Footer />

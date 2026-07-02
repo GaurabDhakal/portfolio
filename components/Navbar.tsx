@@ -1,93 +1,53 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NavbarLinks } from "@/constants/Navbar";
+import { Button } from "./ui/button";
+import { FULL_NAME } from "@/constants/bio";
 
-import { useEffect, useState } from "react";
-
-type TimeDisplayProps = {
-  locale?: string;
-};
-
-const Navbar = ({ locale = "en-US" }: TimeDisplayProps) => {
-  const router = useRouter();
+const Navbar = () => {
   const path = usePathname();
-  const [timeZone, setTimeZone] = useState<string>("");
-  const [time, setTime] = useState<string>("");
-
-  const handleClick = (href: string) => {
-    router.push(href);
-  };
-
-  useEffect(() => {
-    let tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    if (tz === "Asia/Katmandu") {
-      tz = "Asia/Kathmandu";
-    }
-    setTimeZone(tz);
-  }, []);
-
-  useEffect(() => {
-    if (!timeZone) return;
-    const updateTime = () => {
-      const now = new Date();
-      const options: Intl.DateTimeFormatOptions = {
-        timeZone,
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false,
-      };
-      const timeString = new Intl.DateTimeFormat(locale, options).format(now);
-      setTime(timeString);
-    };
-
-    updateTime();
-    const intervalId = setInterval(updateTime, 1000);
-    return () => clearInterval(intervalId);
-  }, [timeZone, locale]);
 
   return (
-    <div className="flex flex-col w-full bg-transparent rounded md:backdrop-blur-md">
-      {/* Loading Bar */}
-
-      <div className="flex items-center justify-between w-full ">
-        {/* Left Side */}
-        <div className="flex-1 text-white hidden lg:block text-center font-semibold">
-          {timeZone}
+    <div className="flex flex-col w-full bg-transparent rounded md:backdrop-blur-md items-center  font-medium font-space-grotesk!">
+      <div className="flex justify-center items-center w-full lg:px-10">
+        <div className=" flex-1 hidden lg:block  ">
+          <p
+            className={` text-white tracking-wide text-lg text-center font-medium`}
+          >
+            {FULL_NAME}
+          </p>
         </div>
 
-        {/* Center Navbar */}
-        <div className="flex-1 flex justify-center w-full select-none ">
-          <nav className="flex items-center font-semibold w-full justify-center p-2 md:p-1.5 bg-[#15151b82] md:bg-transparent md:backdrop-blur-none border md:border-gray-500/50 text-white my-3.5 mx-4 md:m-5 rounded-[20px] md:rounded-4xl backdrop-blur-lg">
+        <div className="flex flex-1 justify-center w-full md:w-fit select-none">
+          <nav className="flex items-center font-semibold w-full justify-center p-2 md:p-1.5 
+          bg-transparent md:backdrop-blur-none border md:border-gray-500/50 text-white my-3.5 mx-4 md:m-5 rounded-[20px] md:rounded-4xl backdrop-blur-lg">
             <ul className="w-full">
-              <li className="flex items-center justify-around gap-2 sm:space-x-0.75">
+              <li className="flex items-center justify-around gap-2 sm:space-x-3">
                 {NavbarLinks.map(({ icon, text, href, hasChildren }) => (
-                  <a
+                  <Link
                     key={href}
                     href={href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleClick(href);
-                    }}
                     className={`
                       ${
-                        (path === href || (path.startsWith(href) && hasChildren)) &&
-                        "md:bg-[#3e3e3e]  md:border-gray-500/50 md:text-white text-[#627a73]"
+                        (path === href || (path.startsWith(`${href}/`) && hasChildren)) &&
+                        "text-[#7dd3fc]"
                       }
-                       flex flex-col md:flex-row items-center justify-center md:gap-2 rounded-3xl border border-transparent active:text-white/50 p-0 sm:px-8 py-0 md:py-1.5 transition-all duration-500 md:hover:border-gray-500/50 md:hover:bg-[#3e3e3e]`}
+                       flex flex-col md:flex-row items-center justify-center md:gap-1.5 rounded-2xl border border-transparent active:text-white/50 p-0 md:px-3 py-0 md:py-1.5 transition-all duration-500 md:hover:text-[#38bdf8] `}
                   >
-                    <span>{icon}</span>
-                    <span className="text-xs sm:inline md:text-[15px]">{text}</span>
-                  </a>
+                    <span className="text-lg md:text-base">{icon}</span>
+                    <span className="text-sm md:text-base ">{text}</span>
+                  </Link>
                 ))}
               </li>
             </ul>
           </nav>
         </div>
 
-        {/* Right Side */}
-        <div className="flex-1 text-white hidden lg:block text-center font-semibold">
-          <p>{time}</p>
+        <div className="text-white hidden lg:block text-center font-semibold flex-1">
+          <Button className="font-sans cursor-pointer" variant={"outline"}>
+            Download Resume
+          </Button>
         </div>
       </div>
     </div>

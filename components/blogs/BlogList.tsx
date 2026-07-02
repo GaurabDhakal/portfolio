@@ -3,7 +3,7 @@ import { ScrollTrigger, SplitText } from "gsap/all";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-
+import { blurredIn } from "@/constants/gsap_animations";
 gsap.registerPlugin(ScrollTrigger, useGSAP, SplitText);
 type TBlogList = {
   slug: string;
@@ -22,17 +22,16 @@ export const BlogList = (props: TBlogList) => {
         type: "words, chars",
         mask: "words",
       });
-      gsap.from(titleChars.chars, {
-        opacity: 0,
-        filter: "blur(10px)",
-        y: 35,
-        scale: 0.95,
-        stagger: {
-          each: 0.0058,
-        },
-        duration: 0.9,
-        ease: "expo.out",
-      });
+      gsap.from(
+        titleChars.chars,
+        blurredIn({
+          stagger: {
+            each: 0.0018,
+          },
+          duration: 0.6,
+          ease: "expo2.out",
+        }),
+      );
     }
   }, [titleRef.current, animate]);
   return (

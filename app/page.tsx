@@ -6,8 +6,8 @@ import { RecentProjects } from "@/components/RecentProjects";
 export default function Home() {
   useDynamicTitle();
   return (
-    <div className="text-white flex flex-col items-center justify-center p-5 gap-10 mt-1 lg:max-w-[70%] xl:max-w-[55%]">
-      <div>
+    <div className="text-white flex flex-col items-center justify-center py-5 px-3.5 gap-10 lg:max-w-[70%] xl:max-w-[52%]">
+      <div className="w-full">
         <Intro />
       </div>
       <div className="w-full px-0.5">
