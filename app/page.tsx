@@ -11,7 +11,7 @@ export default function Home() {
       mx-2
     justify-center py-3 gap-10 lg:max-w-[70%] xl:max-w-[52%]"
     >
-      <div className="w-full bg-[url('/fancy-pants.jpg')] bg-cover bg-no-repeat py-10 md:py-18 px-2 md:px-12 rounded-2xl">
+      <div className="w-full bg-[url('/chalkboard.jpg')] bg-cover bg-no-repeat py-14 md:py-20 px-4 md:px-12 rounded-2xl">
         <Intro />
       </div>
       <div className="w-full px-1">

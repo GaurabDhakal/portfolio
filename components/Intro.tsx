@@ -42,7 +42,7 @@ const Intro = () => {
           </p>
         </div>
         <div className="md:max-w-210 text-neutral-300/75 intro-expanded-text font-medium md:px-0.5 overflow-hidden">
-          <p className="overflow-hidden text-white bg-gray-700/20 backdrop-blur-md rounded-2xl px-2">
+          <p className="overflow-hidden text-white backdrop-blur-xs rounded-2xl px-0.5">
             {BASIC_EXPANDED_INTRO_TEXT}
           </p>
         </div>
