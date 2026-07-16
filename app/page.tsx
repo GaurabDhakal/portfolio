@@ -9,13 +9,24 @@ export default function Home() {
     <div
       className="text-white flex flex-col items-center
       mx-2
-    justify-center py-3 gap-10 lg:max-w-[70%] xl:max-w-[52%]"
+    justify-center py-3 gap-10 lg:mt-2   lg:max-w-[70%] xl:max-w-[54%]"
     >
-      <div className="w-full bg-[url('/chalkboard.jpg')] bg-cover bg-no-repeat py-14 md:py-20 px-4 md:px-12 rounded-2xl">
-        <Intro />
+      <div className="relative overflow-hidden rounded-2xl py-14 md:py-22 px-4 md:px-10">
+        {/* Background */}
+        <div
+          className="absolute inset-0 bg-[url('/cover.jpeg')] bg-cover bg-no-repeat scale-105"
+        />
+
+        {/* Optional dark overlay */}
+        <div className="absolute inset-0 bg-black/30" />
+
+        {/* Content */}
+        <div className="relative z-10">
+          <Intro />
+        </div>
       </div>
       <div className="w-full px-1">
-        <LatestBlogs limit={1} />
+        <LatestBlogs limit={2} />
       </div>
       <div className="px-1">
         <RecentProjects limit={2} />
