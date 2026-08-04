@@ -8,104 +8,113 @@ import { Metadata } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Instrument_Serif } from "next/font/google";
 
 const s_grotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
+    subsets: ["latin"],
+    variable: "--font-space-grotesk",
+});
+const instrumental_serif = Instrument_Serif({
+    weight: ["400"],
+    subsets: ["latin"],
+    variable: "--font-instrumental-serif",
+    style: ["italic", "normal"],
 });
 export const zedMono = localFont({
-  src: [
-    {
-      path: "../public/fonts/zed-mono/ZedMonoNerdFont-Regular.ttf",
-      weight: "400",
-    },
-    {
-      path: "../public/fonts/zed-mono/ZedMonoNerdFont-Medium.ttf",
-      weight: "500",
-    },
-    {
-      path: "../public/fonts/zed-mono/ZedMonoNerdFont-Bold.ttf",
-      weight: "700",
-    },
-  ],
-  variable: "--font-zed-mono",
+    src: [
+        {
+            path: "../public/fonts/zed-mono/ZedMonoNerdFont-Regular.ttf",
+            weight: "400",
+        },
+        {
+            path: "../public/fonts/zed-mono/ZedMonoNerdFont-Medium.ttf",
+            weight: "500",
+        },
+        {
+            path: "../public/fonts/zed-mono/ZedMonoNerdFont-Bold.ttf",
+            weight: "700",
+        },
+    ],
+    variable: "--font-zed-mono",
 });
 
 const PP_Neue_Montreal = localFont({
-  src: [
-    {
-      path: "../public/fonts/PPNeueMontreal/PPNeueMontreal-Extrabold.otf",
-      weight: "900",
-    },
-    {
-      path: "../public/fonts/PPNeueMontreal/PPNeueMontreal-Regular.otf",
-      weight: "400",
-    },
-  ],
-  variable: "--pp-neue-montreal",
+    src: [
+        {
+            path: "../public/fonts/PPNeueMontreal/PPNeueMontreal-Extrabold.otf",
+            weight: "900",
+        },
+        {
+            path: "../public/fonts/PPNeueMontreal/PPNeueMontreal-Regular.otf",
+            weight: "400",
+        },
+    ],
+    variable: "--pp-neue-montreal",
 });
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  applicationName: "Gaurab Dhakal",
-  referrer: "origin-when-cross-origin",
-  keywords: [
-    "Gaurab Dhakal",
-    "Gaurab Dhakal developer",
-    "Gaurab Dhakal portfolio",
-    "Gaurab Dhakal Nepal",
-    "web developer Nepal",
-    "full stack developer Nepal",
-    "Next.js developer Nepal",
-    "React developer portfolio",
-    "JavaScript developer portfolio",
-    "AI enthusiast Nepal",
-    "aspiring data scientist Nepal",
-    "frontend developer portfolio",
-    "backend developer portfolio",
-    "student developer Nepal",
-    "hire web developer Nepal",
-    "portfolio website developer Nepal",
-  ],
-  creator: "Gaurab Dhakal",
-  icons: [
-    {
-      url: "/favicon.png",
-      type: "image/png",
-    },
-  ],
+    applicationName: "Gaurab Dhakal",
+    referrer: "origin-when-cross-origin",
+    keywords: [
+        "Gaurab Dhakal",
+        "Gaurab Dhakal developer",
+        "Gaurab Dhakal portfolio",
+        "Gaurab Dhakal Nepal",
+        "web developer Nepal",
+        "full stack developer Nepal",
+        "Next.js developer Nepal",
+        "React developer portfolio",
+        "JavaScript developer portfolio",
+        "AI enthusiast Nepal",
+        "aspiring data scientist Nepal",
+        "frontend developer portfolio",
+        "backend developer portfolio",
+        "student developer Nepal",
+        "hire web developer Nepal",
+        "portfolio website developer Nepal",
+    ],
+    creator: "Gaurab Dhakal",
+    icons: [
+        {
+            url: "/favicon.png",
+            type: "image/png",
+        },
+    ],
 
-  title: {
-    default: "Gaurab Dhakal",
-    template: "%s - Gaurab",
-  },
-  description: "Full stack developer and aspiring Ai/ML Engineer",
-  openGraph: {
-    url: "https://gaurabdhakal.com.np",
-    siteName: "Gaurab Dhakal",
-    title: "Gaurab Dhakal",
+    title: {
+        default: "Gaurab Dhakal",
+        template: "%s - Gaurab",
+    },
     description: "Full stack developer and aspiring Ai/ML Engineer",
-    locale: "en_US",
-    type: "website",
-  },
+    openGraph: {
+        url: "https://gaurabdhakal.com.np",
+        siteName: "Gaurab Dhakal",
+        title: "Gaurab Dhakal",
+        description: "Full stack developer and aspiring Ai/ML Engineer",
+        locale: "en_US",
+        type: "website",
+    },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="en" className={cn("font-sans dark", geist.variable)}>
-      <body
-        className={`${geist.className} ${PP_Neue_Montreal.variable} ${zedMono.variable} ${s_grotesk.variable} antialiased h-screen flex flex-col bg-[#1c1e20] selection:bg-[#e0e0e0] selection:text-[#3f3f3f] `}
-      >
-        <div className="fixed top-0 bottom-auto w-full z-50 ">
-          <Navbar />
-        </div>
-        <main className="py-4 px-1 flex grow items-center flex-col mt-16 lg:mt-20">
-          <Providers>{children}</Providers>
-        </main>
-        <Footer />
-      </body>
-      <Analytics />
-      <SpeedInsights />
-    </html>
-  );
+export default function RootLayout({
+    children,
+}: Readonly<{ children: React.ReactNode }>) {
+    return (
+        <html lang="en" className={cn("font-sans dark", geist.variable)}>
+            <body
+                className={`${geist.className} ${PP_Neue_Montreal.variable} ${instrumental_serif.variable} ${zedMono.variable} ${s_grotesk.variable} antialiased h-screen flex flex-col bg-[#1c1e20] selection:bg-[#e0e0e0] selection:text-[#3f3f3f] `}
+            >
+                <div className="fixed top-0 bottom-auto w-full z-50 ">
+                    <Navbar />
+                </div>
+                <main className="py-4 px-1 flex grow items-center flex-col mt-16 lg:mt-20">
+                    <Providers>{children}</Providers>
+                </main>
+                <Footer />
+            </body>
+            <Analytics />
+            <SpeedInsights />
+        </html>
+    );
 }
