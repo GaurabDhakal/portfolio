@@ -2,6 +2,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavbarLinks } from "@/constants/Navbar";
+import { Button } from "./ui/button";
+import { FIRST_NAME, FULL_NAME } from "@/constants/bio";
+import { Separator } from "@/components/ui/separator";
 
 const Navbar = () => {
     const path = usePathname();
@@ -12,7 +15,7 @@ const Navbar = () => {
                 <div className="flex justify-center w-full select-none px-2">
                     <nav
                         className="flex font-semibold w-full justify-center p-2 md:p-1.5 
-          bg-transparent md:backdrop-blur-none border md:border-gray-500/50 text-white my-3.5 mx-4 md:m-5 rounded-[20px] md:rounded-2xl backdrop-blur-lg md:w-[40%] items-center"
+          bg-transparent md:backdrop-blur-none border md:border-gray-500/50 text-white my-3.5 mx-4 md:m-5 rounded-[20px] md:rounded-2xl backdrop-blur-lg md:w-fit items-center"
                     >
                         <ul className="flex items-center justify-around w-full sm:space-x-3">
                             <div className="w-full flex items-center justify-center">

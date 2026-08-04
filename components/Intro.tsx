@@ -28,33 +28,34 @@ const Intro = () => {
         });
     }, []);
     return (
-        <div className=" flex intro-element w-full flex-col md:flex-row gap-5">
-            <div className="space-y-5 flex-2">
-                <div className=" font-extrabold">
-                    <h1 className="flex text-white flex-col">
-                        <span className="  text-white sm:text-4xl lg:text-5xl text-3xl">
+        <div className=" flex flex-col intro-element gap-5">
+            <div className="space-y-5 ">
+                <div className="sm:text-5xl flex text-4xl font-extrabold">
+                    <h1 className="flex flex-col text-white">
+                        <span className="bg-clip-text text-transparent bg-linear-to-r to-emerald-100 from-emerald-400">
                             Hi, I am
                         </span>
-                        <div
-                            className={`font-pp-neue-montreal full-name-element animated-text relative flex`}
+                        <span
+                            className={`font-pp-neue-montreal full-name-element animated-text relative inline-block`}
                         >
-                            <span
-                                className="
-                            sm:text-5xl lg:text-6xl text-4xl
-                            text-cyan-600 italic font-instrumental-serif"
-                            >
+                            <span className="text-fuchsia-100">
                                 {FULL_NAME}.
                             </span>
-                        </div>
+                            <HandwrittenUnderline />
+                        </span>
                     </h1>
                 </div>
                 <div className="md:max-w-210 text-neutral-300/75 intro-expanded-text font-medium md:px-0.5 overflow-hidden">
-                    <p className="overflow-hidden max-w-[60%] text-white backdrop-blur-xs  rounded-2xl px-0.5">
+                    <p className="overflow-hidden text-white backdrop-blur-xs text-sm rounded-2xl px-0.5">
                         {BASIC_EXPANDED_INTRO_TEXT}
                     </p>
                 </div>
             </div>
-
+            <div className="flex gap-2 ">
+                <ButtonWrapper text="About me" href="/about" />
+                <ButtonWrapper text="Blog" href="/blog" />
+                <ButtonWrapper text="Projects" href="/projects" />
+            </div>
         </div>
     );
 };
